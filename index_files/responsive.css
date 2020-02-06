@@ -1,0 +1,4074 @@
+/* 
+   _  ___         
+| |/ (_) |__  ___
+| ' <| | '_ \/ _ \
+|_|\_\_|_.__/\___/
+
+KIBO STUDIOS // ADVERTISING ® 2016
+This file was originally created by Kibo.
+No public difusion allowed. Code rights reserved.
+Contact us info@kibostudios.com
+www.kibostudios.com
+
+Theme Name: Kibopress
+Version: 1.0
+Author: Kibo
+
+*/
+
+/************************ RESPONSIVE ************************/
+
+@media (max-width: 1400px) {
+    /************************ MENU ************************/ 
+    
+    .navbar-default .navbar-nav > li > a, .menu-inner .navbar-default li.dropdown ul li a {
+        padding: 5px 20px;       
+    }
+}
+
+/* X-Large desktop */
+@media (min-width: 1200px) {
+    /* Fix iframe */
+    .page-iframe .box-content iframe {
+        margin: 100px 0px 0px;
+    }
+    
+    .box-header .box-offers {
+        max-width: 600px;
+    }
+    
+    .box-header .box-offers,
+    .box-header .box-offers .carousel .image {
+        height: 300px;
+    }
+}
+
+
+/* Large desktop */
+@media (max-width: 1199px) {
+    
+    main {
+        /*padding-top: 66px !important*/
+    }
+    
+    .home-content .box-header {
+        min-height: 400px !important;
+        /*margin-top: 66px*/
+    }
+    
+    .header-scroll + * {
+        margin-top: 299px
+    }
+    
+    /************************ MENU ************************/
+    
+    body.open-menu{
+        left: -320px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    body.open-menu .header{
+        left: -320px;
+    }
+    
+    .navbar-header {
+        float: none;
+    }
+    
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    
+    .navbar-toggle {
+        display: block;
+    }
+    
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    
+    .navbar-collapse.collapse {
+       display: none!important;
+    }
+    
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px 0;
+        height: 100% !important;
+        margin-left: 0;
+        max-height: 93vh;
+        overflow-y: auto;
+        padding-bottom: 60px;
+        max-height: 100%
+    }
+    
+    .navbar-nav>li {
+        float: none;
+    }
+    
+    .navbar-default .navbar-nav > .active{
+        background: rgba(216,216,216,0.25);
+    }
+    
+    .navbar-default .navbar-nav > li .menu-inner li.active{
+        background: transparent
+    }
+    
+    .navbar-default .navbar-nav > li > a {
+        padding: 10px 20px
+    }
+    
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .navbar-nav>li>a .caret{
+        width: 8.13px;
+        height: 4.97px;
+        margin-left: 15px;
+        border: 0;
+        margin-top: -3px;
+        background-image: url(../images/iconos/arrow-menu.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-transition: 0.3s ease all;
+        transition: 0.3s ease all;
+    }
+    
+    .navbar-nav>li.active>a .caret, .navbar-nav>li>a .caret.rotate {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+      
+    .collapse.in{
+        display:block !important;
+    }
+    
+    .menu-toggle.open{
+        position: absolute; 
+        top: 30px;
+        right: 15px;
+    }
+    
+    .box-menu .navbar-collapse {
+        position: fixed;
+        top: 0;
+        display: block !important;
+        width: 320px;
+        padding-top: 66px;
+        right: -320px;
+        background: white;
+        overflow: hidden !important;
+        height: 100% !important;
+        text-align: left;
+        -webkit-transition: 0.4s linear all;
+        transition: 0.4s linear all;
+    }    
+    
+    body.open-menu .box-menu .navbar-collapse{
+        right: 0;
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    }
+    
+    .box-menu .menu-inner{
+        position: relative;
+        top: 0;
+    }
+    
+    .box-menu .menu-inner .container{
+        width: 100%;
+        padding: 0;
+    }
+    
+    .menu-inner .navbar-default ul {
+        display: block;
+        height: 100% !important;
+        padding: 0 !important;
+        overflow: hidden;
+    }
+    
+    .menu-inner .navbar-default ul li {
+        display: block
+    }
+    
+    .menu-inner .navbar-default .navbar-nav > li > a, .menu-inner .navbar-default .navbar-nav > li.contact > a, .menu-inner .navbar-default .navbar-nav > li.contact > a:last-child {
+        padding-left: 40px !important
+    }
+    
+    .menu-inner {
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+    
+    .menu-inner.activo{
+        max-height: 900px;
+        -webkit-transition: all 0.6s linear;
+        transition: all 0.6s linear;
+    }
+    
+    /*Blog*/
+    .menu-inner.menu-blog .navbar-default {
+        background: #424141;
+    }
+    
+    /*Burguer*/
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+    }
+    
+    .menu-toggle span{
+        background: #BC9C29;
+        height: 2px;
+        width: 25px;
+    }
+
+    .menu-toggle span:nth-child(2) {
+        top: 8px
+    }
+
+    .menu-toggle span:nth-child(3) {
+        top: 16px
+    }
+    
+    .menu-toggle.open span:nth-child(3) {
+        top: 17px
+    }
+    
+    /*Submenu*/
+    .menu-inner .navbar-default li.dropdown ul {
+         background: #383636;
+        max-height: 0;
+        position: relative;
+        left: 0;
+        -webkit-transform: translate(0);
+        transform: translate(0);
+        width: 100%;
+        /* min-height: 0; */
+        -webkit-transition: all 0.6s ease;
+        transition: all 0.6s ease;
+        top: 0 !important;
+        overflow: hidden;
+        z-index: 1;
+        padding-bottom: 0 !important
+    }
+    
+    .menu-inner .navbar-default li.dropdown ul li a {
+        padding: 8px 0 8px 60px;
+        text-align: left;
+    }
+    
+    .menu-inner .navbar-default li.dropdown ul li:last-child a {
+        padding-bottom: 8px
+    }
+    
+    .menu-inner .navbar-default li.dropdown ul.active {
+        max-height: 500px;
+        z-index: 1
+    }
+    
+    .menu-inner .navbar-default .navbar-nav > li.contact > a {
+        display: block;
+    }
+    
+    .menu-inner .navbar-default .navbar-nav > li.contact > a:last-child {
+        padding: 6px 0;
+    }
+    
+    .menu-inner .navbar-default .navbar-nav > li.contact span {
+        display: none
+    }
+    
+    .menu-inner .dropdown:before {
+        left: 0
+    }
+    
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li.active > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+        background: transparent;
+        color: #E5E2E2;
+        line-height: initial;
+    }
+    
+    /* Idiomas */
+    .header .box-lang {
+        right: 60px;
+    }
+    .header .lang-list {
+        right: 66px;
+    }
+    
+    .header .box-weather {
+        right: 60px;
+    }
+    
+    .header .box-weather:before{
+        width: 172px;
+        right: -2px
+    }
+    
+    /* Cookies */
+    .box-cookies {
+        top: 0;
+        height: auto;
+    }
+
+    .box-cookies p {
+        padding-right: 60px
+    }
+
+    .box-cookies .cerrar-cookies {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    .menu-inner .navbar-default .navbar-nav > li.booking > a {
+        padding: 6px 10px
+    }
+    
+    /* Contacto submenu */
+    .menu-inner .navbar-default .navbar-nav > li.contact > a {
+        padding-right: 10px
+    }
+    
+    .menu-inner .navbar-default .navbar-nav > li.contact > a:last-child {
+        padding-left: 10px;
+    }
+    
+    .header-scroll {
+        top: 0
+    }
+
+    /************************ FOOTER ************************/ 
+    
+    .footer h4 .caret {
+        width: 9px;
+        height: 5px;
+        border:0;
+        margin-top: -2px;
+        background-image: url(../images/iconos/arrow-footer.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-transition: 0.3s ease all;
+        transition: 0.3s ease all;
+    }
+    
+    .footer h4 .caret.rotate {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    
+    .footer .footer-bottom .form-inline {
+        margin-bottom: 20px
+    }
+    
+    .footer .form-inline label {
+        margin-right: 5px
+    }
+    
+    .footer .footer-bottom .form-inline, .footer .footer-bottom .box-logo {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer .footer-bottom .box-logo h4 {
+        display: block;
+        margin-bottom: 20px;
+        margin-right: 0
+    }
+    
+    .footer .footer-bottom .box-logo h4 br {
+        display: none
+    }
+    
+    /************************ PALACE - ALOJAMIENTO ************************/
+    
+    .page-alojamiento .box-habitaciones ul {
+        padding: 0
+    }
+    
+    /************************ PALACE - ALOJAMIENTO ************************/
+
+    .single-restaurantes .box-descubre .box-icons ul li:nth-child(2n) {
+        padding-left: 15px
+    }
+    
+    /************************ WELLNESS - PROGRAMAS ************************/
+
+    .single-programas .box-small .content {
+        padding-left: 20px
+    }
+    
+    .page-profesionales .box-team .box-text .slide {
+        padding-left: 5px
+    }
+    
+    .page-profesionales .box-team .box-text .slide p {
+        margin-bottom: 5px
+    }
+    
+    /************************ COLLECTION - CONTACTO ************************/
+    
+    .page-contact .box-map .details-contact .row > div {
+        margin-bottom: 20px
+    }
+    
+    .page-contact .box-map .details-contact .row > div:last-child {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+    
+    /************************ GOLF - MICHAEL CAMPBELL ************************/
+    
+    .page-campbell .box-ciencia {
+        background-position: center bottom !important;
+    }
+    
+    /************************ THERMAS - HOME ************************/
+    
+    .home-thermas .box-alojamiento .box-logos img {
+        margin: 0 25px;
+    }
+    
+    /************************ GOLF - MEMBERSHIP ************************/
+    .golf-membership .box-contact .container > .row > div {
+        padding: 0px 15px;
+    }
+    
+    /************************ THERMAS - INSTALACIONES ************************/
+    
+    .page-alojamiento .box-habitaciones ul {
+        padding: 0 5px;
+    }
+    
+    .page-alojamiento .box-habitaciones ul li {
+        margin: 0 5px
+    }
+    
+    .thermas-instalaciones.single-programas .box-small .info.content {
+        padding-left: 0
+    }
+    
+    .thermas-instalaciones.single-programas .box-small .content {
+        padding-left: 60px;
+    }
+    
+    /************************ COLLECTION - HOME ************************/
+    
+    .home-content.home-palace.home-collection .box-header.header-filter {
+        margin-bottom: 70px
+    }
+    
+    .home-collection .form-header .box-form {
+        padding: 15px
+    }
+    
+    .home-collection .form-header .form-group:nth-child(3) .form-control {
+        max-width: 110px;
+    }
+    
+    .home-collection .form-header .form-group:nth-child(4) .form-control {
+        max-width: 100px;
+    }
+    
+    .home-collection .form-header .form-group:last-child{
+        margin-top: 15px
+    }
+    
+    .home-collection .form-header .box-input img {
+        width: 5px;
+    }
+    
+    .home-collection .form-header .btn-solid {
+        padding: 10px 20px;
+        margin-left: 5px;
+    }
+    
+    .home-collection .box-experience .box-slide .info{
+        padding: 10px
+    }
+    
+    .home-content.home-palace.home-collection .form-header .form-group:nth-child(2) .form-control {
+        max-width: inherit
+    }
+    
+    /************************ COLLECTION - INMOBILIARIA ************************/
+    
+    .page-inmobiliaria .form-header .box-form .form-group.long .form-control {
+        width: 150px;
+    }
+    
+    .page-inmobiliaria .form-header .box-form .form-group.long:nth-child(2) .form-control {
+        max-width: 110px
+    }
+    
+    .page-inmobiliaria .form-header .box-form {
+        padding: 15px
+    }
+    
+    .page-inmobiliaria .form-header .form-group:nth-child(3) .form-control {
+        max-width: 110px;
+    }
+    
+    .page-inmobiliaria .form-header .form-group:nth-child(4) .form-control {
+        max-width: 90px;
+    }
+    
+    .page-inmobiliaria .form-header .form-group:nth-child(4) .form-control[name='baths']] {
+        max-width: 60px
+    }
+    
+    .page-inmobiliaria .form-header .box-input img {
+        /*width: 5px;*/
+    }
+    
+    .page-inmobiliaria .form-header .btn-solid {
+        padding: 10px 20px;
+        margin-left: 5px;
+    }
+    
+    .single-inmobiliaria .box-features ul li:nth-child(4) span {
+        border-top: 0
+    }
+    
+    /************************ PALACE - HOME ************************/
+    
+    .home-content.home-palace .form-header .form-group:nth-child(2) .form-control {
+        max-width: 80px;
+    }
+    
+    .home-palace .form-header .btn-solid {
+        padding: 10px 20px;
+        margin-left: 5px;
+    }
+    
+    /************************ VP - HOME ************************/
+    
+    .home-vp .form-header .form-group:nth-child(2) .form-control {
+        /*max-width: 90px;*/
+    }
+    
+    .home-vp .form-header .btn-solid {
+        padding: 10px 20px;
+        margin-left: 5px;
+    }
+    
+    /************************ PALACE - RAQUET ************************/
+    
+    .details-contact .col-xs-12:first-child > .details {
+        margin-bottom: 16px;
+    }
+    
+    .page-raquet .box-mixin .row-flex .row-flex:last-child {
+        padding-right: 15px
+    }
+    
+    .collection-contact .details-contact .col-xs-12:first-child > .details{
+        margin-bottom: 0
+    }
+    
+    .page-template-contacto .details-contact .col-xs-12:first-child > .details {
+        margin-bottom: 0;
+    }
+    
+    /************************ EXPERIENCE ************************/
+    
+    .home-experience.home-palace .box-alojamiento .link-content .info {
+        /*bottom: -100px*/
+    }
+    
+    .home-experience.home-palace .box-alojamiento .link-content:hover .info {
+        bottom: 0;
+    }
+    
+    .home-palace .box-alojamiento .link-content .info .btn, .home-palace .box-alojamiento .link-content .info a.btn {
+        padding: 8px
+    }
+    
+    /************************ PALACE - INSTALACIONES ************************/
+    
+    .page-instalaciones.page-eventos .box-intro-instalaciones .box-details .text {
+        margin: 10px 0;
+        display: block
+    }
+    
+     /************************ THERMAS - HISTORIA ************************/
+    
+    .thermas-historia.home-collection .box-experience .box-slide .info {
+        padding: 0 20px
+    }
+    
+    /* FOOTER NEWSLETTER */
+    
+    .footer .footer-bottom .form-inline .form-group {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center
+    }
+    
+    .footer .footer-bottom .mc4wp-response {
+        position: relative;
+        top: inherit
+    }
+    
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media (max-width: 991px) { 
+    
+    /* Fix iframe */
+    .page-iframe .box-content iframe {
+        margin: 66px 0px 0px;
+    }
+    
+    /************************ PALACE - HOME ************************/
+
+    .home-palace .box-alojamiento .link-content {
+        height: 350px;
+        margin-top: 4px;
+    }
+    
+    .home-palace .box-alojamiento .link-content .image {
+        height: calc(100% - 70px);
+    }
+    
+    /************************ PALACE - ALOJAMIENTO ************************/
+    
+    .page-alojamiento .box-habitaciones ul li{
+        margin: 0
+    }
+    
+    .page-alojamiento .box-alojamiento .link-content {
+        height: 350px;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    
+    .page-alojamiento .box-suites .row + .row > div:last-child .link-content {
+        /*width: 100%;*/
+        margin: 30px 10px 0px;
+    }
+    
+    /************************ PALACE - BODAS ************************/
+    
+    .page-template-bodas .box-atencion.box-descubre .btn-border {
+        margin-left: 0
+    }
+    
+    /************************ WELLNESS - PROGRAMAS ************************/
+    
+    .home-palace .box-alojamiento .row .row{
+        padding: 0;
+        margin: 0 -15px;
+    }
+    
+    .single-programas .box-descubre .info {
+        padding-right: 0
+    }
+    
+    /************************ WELLNESS - PROFESIONALES ************************/
+    
+    .page-profesionales .box-team > .row:last-child {
+        z-index: 2;
+        position: relative
+    }
+    
+    .page-profesionales .box-team .slide-images .image {
+        width: 100%
+    }
+    
+    .page-profesionales .box-team .box-text .slide {
+        padding-left: 0
+    }
+    
+    .page-profesionales .box-team .box-text{
+        height: 100%;
+        min-height: 620px;
+    }
+    
+    .page-profesionales .carousel .controls{
+        background: #BC9C29;
+        border: 0;
+        z-index: 100;
+        position: absolute;
+        right: -15px;
+        left: inherit
+    }
+    
+    /************************ COLLECTION - HOME ************************/
+    
+    .home-content.home-palace.home-collection .box-header.header-filter {
+        margin-bottom: 40px
+    }
+    
+    /************************ COLLECTION - INMOBILIARIA ************************/
+
+    .page-inmobiliaria .form-header .form-group:nth-child(4) .form-control {
+        max-width: 120px;
+    }
+    
+    
+    .page-template-inmobiliaria .page-inmobiliaria .form-bottom.count{
+        top: 115px
+    }
+    
+    /************************ COLLECTION - CONTACTO ************************/
+    
+    .page-contact .box-map .content {
+        padding-left: 0
+    }
+    
+    .page-contact .box-map .details-contact .row > div {
+        margin-bottom: 20px
+    }
+    
+    .page-contact .box-map .details-contact .row > div:last-child {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+    
+    /************************ GOLF - HOME ************************/
+    
+    .box-golf .box-images {
+        display: flex;
+        display: -webkit-flex;
+        -moz-display:flex;
+        justify-content: space-between; 
+    }
+    
+    .box-golf .box-images a {
+        margin: 0;
+        width: 30%
+    }
+    
+    /************************ GOLF - CAMPO ************************/
+
+    .single-campo .tab-content .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    /*Hoyos*/
+    .single-campo .box-resume .tab-content .row > div:first-child {
+        text-align: center;
+        margin-top: 25px
+    }
+    
+    .single-campo .box-resume .tab-content .row > div:first-child img {
+        height: 400px;
+        text-align: center
+    }
+    
+    /*Listado normas generales*/
+    .single-campo .box-resort ul {
+        padding-right: 0
+    }
+
+    .single-campo .box-resume .controls .flag {
+        margin-top: 0
+    }
+    
+    .single-campo .box-testimonio{
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    
+    .single-campo .box-testimonio:before {
+        right: 0;
+        background: rgba(247, 246, 246, 0.6)
+    }
+    
+    .single-campo .box-testimonio:after{
+        display: none
+    }
+    
+    /************************ GOLF - CALENDARIO ************************/
+    
+    .page-calendario .content {
+        padding-left: 0
+    }
+
+    .daterangepicker .calendar td, .box-datepicker .datepicker .datepicker-days td { 
+        padding: 4px 8px
+    }
+    
+    .box-datepicker {
+        padding: 10px;
+    }
+    
+    /************************ GOLF - MEMBERSHIP ************************/
+    
+    .golf-membership .box-contact .container > .row > div {
+        padding: 0 15px;
+    }
+    
+    .golf-membership .carousel .item {
+        max-height: 320px
+    }
+    
+    .golf-membership .box-membership .row-flex {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap
+    }
+    
+    .golf-membership .box-membership.box-contact .container > .row > div {
+        margin-bottom: 30px
+    }
+    
+    /************************ GOLF - MICHAEL CAMPBELL ************************/
+        
+    /* Slider Tabs */
+    .home-palace .box-instalaciones .panel-default .panel-heading h4 a {
+        width: 80%
+    }
+    
+    /************************ THERMAS - HOME ************************/
+
+    .home-thermas .form-header .form-control.person,
+    .home-golf .form-header .form-control {
+        max-width: 120px;
+        width: 100%;
+    }
+    
+    .home-palace .box-atencion .row > div:last-child {
+        padding-left: 15px
+    }
+    
+    /************************ THERMAS - INSTALACIONES ************************/
+    
+    .thermas-instalaciones .box-descubre .row > div:first-child, .thermas-instalaciones .box-descubre .row:last-child > div:last-child {
+        padding: 0 15px
+    }
+    
+    .single-curas .box-descubre.box-small .row:last-child > div:last-child {
+        padding: 0 15px;
+    }
+    
+    .single-curas .box-descubre.box-small .row > div:first-child {
+        padding-right: 15px;
+    }
+    
+    .single-curas .box-descubre.box-small .content {
+        text-align: left
+    }
+    
+    .thermas-actividades .box-slider {
+        padding: 50px 0
+    }
+    
+    /************************ THERMAS - TERRAZAS ************************/
+    
+    .box-medical .row > div {
+        height: 14vw;
+        min-height: 320px;
+    }
+    
+    /*MODAL CONTACTO RESERVA*/
+    #modal-contact .box-modal {
+        width: 90%
+    }
+    
+    #modal-contact .box-modal .modal-content {
+        padding: 20px 15px
+    }
+    
+    #modal-contact .form-group .btn-solid {
+        width: 100%;
+    }
+    
+    /************************ THERMAS - ACTIVIDADES ************************/
+    
+    .thermas-actividades .box-property .content {
+        padding: 20px 15px;
+        height: inherit;
+    }
+    
+    .thermas-actividades .box-property .btn-border {
+        position: relative;
+        bottom: initial;
+        left: initial;
+    }
+    
+    /************************ COLLECTION - HOME ************************/
+    
+    .home-collection .box-collection .content {
+        padding-right: 0
+    }
+    
+    .home-collection .form-header {
+        height: 120px;
+        bottom: -60px;
+    }
+    
+    .home-collection .form-inline .form-group:last-child {
+        margin-top: 15px;
+    }
+    
+    /************************ COLLECTION - INMOBILIARIA ************************/
+    
+    .page-inmobiliaria .box-header .form-header {
+        height: 120px;
+        bottom: -60px;
+    }
+    
+    .page-inmobiliaria .form-inline .form-group:last-child {
+        margin-top: 15px;
+    }   
+    
+    .page-inmobiliaria .box-header .form-header .box-form {
+        margin-bottom: 15px
+    }
+    
+    .box-content.box-properties {
+        padding-top: 150px
+    }
+    
+    .single-inmobiliaria .box-features ul li:nth-child(3) span {
+        border-top: 0
+    }
+    
+    /************************ COLLECTION - CONTACTO ************************/
+    
+    .box-map .content {
+        padding-left: 20px;
+    }
+    
+    .single-inmobiliaria .box-features {
+        padding: 25px 0
+    }
+    
+    .single-inmobiliaria .box-content {
+        padding: 25px 0
+    }
+    
+    .slick-prev, .slick-prev:hover, .slick-prev:focus {
+        left: calc(7% - 20px);
+    }
+    
+    .slick-prev, .slick-next, .slick-prev:hover, .slick-next:hover, .slick-prev:focus, .slick-next:focus {
+        right: calc(7% - 20px);
+    }
+    
+    .single-projects .box-features .slick-prev, .single-projects .box-features .slick-prev:hover, .single-projects .box-features .slick-prev:focus {
+        left: 0
+    }
+    
+    .single-projects .box-features .slick-next, .single-projects .box-features .slick-next:hover, .single-projects .box-features .slick-next:focus {
+        right: 0;
+    }
+    
+    .single-inmobiliaria .box-slick .image {
+        min-height: 365px;
+        height: 100%;
+    }
+    
+    .single-inmobiliaria .box-slick {
+        height: auto
+    }
+    
+    .single-inmobiliaria .box-features:before {
+        opacity: 0
+    }
+    
+    .single-projects .box-features .box-slick .image {
+        margin-top: 0
+    }
+    
+    .single-projects .box-features .box-slick {
+        height: 300px;
+    }
+    
+    .collection-contact .details-contact .row > div:nth-child(2) {
+        margin-top: 15px
+    }
+    
+    .collection-contact .box-tratamiento .btn-border {
+        padding: 8px 20px
+    }
+    
+    /************************ COLLECTION - SINGLE INMOBILIARIA ************************/
+    
+    .page-inmobiliaria .box-property p {
+        padding-right: 0
+    }
+    
+    .single-inmobiliaria .box-property .box-icons {
+        margin-top: 20px
+    }
+    
+    /************************ PALACE - BOUTIQUE ************************/
+    
+    .home-palace .box-descubre .row > div:last-child {
+        padding-left: 15px
+    }
+    
+    .page-boutique .box-descubre .content {
+        padding-left: 0
+    }
+    
+    /************************ PALACE - RAQUET ************************/
+
+    .page-raquet .box-mixin .row-flex .row-flex:last-child {
+        padding-left: 15px
+    }
+    
+    .page-raquet .box-mixin .row-flex .row-flex {
+        padding-right: 15px
+    }
+    
+    .page-raquet .box-descubre .content.info {
+        padding-left: 15px;
+    }
+    
+    /************************ THERMAS - HOME ************************/
+    
+    .page-landing.home-thermas.home-collection .form-inline .form-group:last-child{
+        margin-top: 0
+    }
+    
+    /************************ BLOG - HOME ************************/
+    
+   .page-blog .box-news .content .row, .page-blog .box-news .content.singular {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        height: 400px;
+    }
+    
+    .page-blog .box-news .content .box-image {
+        position: relative;
+        height: 190px;
+    }
+    
+    .page-blog .box-news .info {
+        height: 100%;
+        padding: 15px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    
+    .page-blog .box-news .content .row > div:last-child, .page-blog .box-news .content.double .row > div:last-child {
+        padding: 15px;
+        margin: 0
+    }
+    
+    .page-blog .box-news .content h4, .page-blog .box-news .content.double h4 {
+        font-size: 18px;
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+    }
+    
+    .page-blog .box-news .content p {
+        -webkit-box-ordinal-group: 5;
+            -ms-flex-order: 4;
+                order: 4;
+    }
+    
+    .page-blog .sitio-fecha {
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
+    }
+    
+    .single-blog .box-news .post-content .info .date {
+        margin-left: 0
+    }
+    
+    .sidebar .widget.interest .content .info .date {
+        margin-left: 0
+    }
+    
+    .page-blog .box-news h5 {
+        display: inline-block;
+        font-size: 13px
+    }
+    
+    .page-blog .box-news p.date, .page-blog .box-news .content.singular .info .date {
+        margin: 0;
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 13px
+    }
+    
+    .page-blog .sidebar {
+        margin-top: 20px
+    }
+    
+    /*fondo*/
+    .page-blog {
+    background: -moz-linear-gradient(top, rgba(34,37,48,0) 0%, rgba(31,31,44,0.5) 5%, rgba(30,32,46,1) 10%, rgba(30,37,61,1) 100%);
+        background: -webkit-linear-gradient(top, rgba(34,37,48,0) 0%,rgba(31,31,44,0.5) 5%,rgba(30,32,46,1) 10%,rgba(30,37,61,1) 100%);
+        background: linear-gradient(to bottom, rgba(34,37,48,0) 0px,rgba(31,31,44,0.5) 5%,rgba(30,32,46,1) 10%,rgba(30,37,61,1) 100%);
+    } 
+    
+    /*OFERTAS*/
+    
+    .see-offers .image {
+        display: none
+    }
+    
+    .box-header .box-offers .see-offers{
+        width: 38px;
+        right: 0;
+    }
+    
+    .box-header .box-offers .see-offers .close-offers{
+        height: 200px;
+        -webkit-writing-mode: vertical-lr;
+        -ms-writing-mode: tb-lr;
+        writing-mode: vertical-lr;
+        padding: 39px 8px 5px 8px;
+    }
+    
+    .box-header .box-offers .see-offers .close-offers:before {
+        background: #bc9c29;
+        width: 39px;
+        height: 39px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+    }
+    
+    .box-header .box-offers .carousel{
+        background: rgba(0,0,0,1)
+    }
+    
+    .box-header .box-offers .carousel .item {
+        height: 200px
+    }
+    
+    .box-header .box-offers .see-offers .close-offers img {
+        margin: 0;
+        left: 10px;
+        top: 14px;
+        position: absolute;
+    }
+    
+    .box-header .box-offers {
+        width: 40px;
+        transition: 1s ease-out all;
+        bottom: 30%;
+        z-index: 8
+    }    
+    
+    .box-header .box-offers.show {
+        width: 90%;
+    }
+    
+    .box-header .box-offers .item .caption {
+        width: 320px;
+        padding-right: 10px
+    }
+    
+    /*BLOG SIDEBAR*/
+    
+    .sidebar .widget .content .row {
+        display: block;
+        height: auto;
+    }
+    
+    /************************ EXPERIENCE ************************/
+    
+    .home-experience.home-palace .box-alojamiento .link-content .info {
+        bottom: -60px
+    }
+    
+    .home-experience.home-palace .box-alojamiento .link-content:hover .info {
+        bottom: 0;
+    }
+    
+    .page-landing .box-thermas .row > div {
+        padding: 20px
+    }
+    
+    .home-experience .box-alojamiento .row .row > div.grid-item {
+        margin-bottom: 15px
+    }
+    
+    .box-cookies p {
+        line-height: 20px;
+    }
+    
+
+}
+/*FIN 991*/
+
+/* Ipad */
+@media (max-width: 768px) {
+    
+    /* Fix iframe */
+    .page-iframe .box-content iframe {
+        margin: 0 0 0 0;
+    }
+    
+    /************************ PALACE - BODAS ************************/
+    
+    .home-palace.page-eventos .box-thermas .row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0px;
+    }
+    
+    
+    
+    .page-alojamiento .box-descubre .row:last-child > div:first-child {
+        padding-right: 10px
+    }
+    .page-alojamiento .box-descubre .row:last-child > div:last-child {
+        padding-left: 10px
+    }
+    
+    /************************ WELLNESS - INSTALACIONES ************************/
+    
+    .home-vp .box-thermas .row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    
+    
+    /************************ WELLNESS - INSTALACIONES ************************/
+    
+    .box-thermas .row {
+        display: block;
+    }
+    
+    .page-instalaciones .box-thermas .row > div {
+        min-height: 300px;
+        width: 100%
+    }
+    
+    /************************ WELLNESS - PROGRAMAS ************************/
+    
+    .home-palace .box-alojamiento .row .row {
+        margin: 0 -7.5px;
+    }
+    
+    .page-programas .box-alojamiento .row.inline > div {
+        padding: 0 7.5px;
+    }
+    
+    .home-palace .box-alojamiento .link-content {
+        margin-top: 10px
+    }
+    
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    
+    .messageIframe{
+        margin-top: 75px;
+        padding-bottom: 50px;
+    }
+    
+    /*Animaciones*/
+    .form-header{
+        opacity: 1;
+    }
+
+    .title-animated {
+        opacity: 1;
+    }
+
+    .oneleft, .oneright, .twoleft, .tworight, .threeleft, .threeright, .fourleft, .fourright, .fiveleft, .fiveright, .sixleft, .sixright, .sevenleft, .sevenright {
+        opacity: 1;
+    }
+
+    .box-header .content, .box-offers.show{
+        opacity: 1;
+    }
+
+    .boxoffer{
+        opacity: 1;
+    }
+
+    .col-wellness-0, .col-wellness-1, .col-wellness-2 {
+        opacity: 1;
+    }
+    
+    /*Generales*/
+
+    main {
+        padding-top: 66px;
+    }
+    
+    .header {
+        height: 66px
+    }
+    
+    .box-header .box-offers .item .caption {
+        width: 270px;
+        padding-right: 10px;
+    }
+    
+    .box-header .content img, .page-landing.home-thermas .box-header .content img {
+        max-width: 320px;
+        min-width: 300px;
+        width: 100%;
+    }
+    
+    /************************ GENERAL - CONTACTO ************************/
+    
+    .box-content.box-map.row-flex {
+       padding-bottom: 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .page-contact .box-map .map-content {
+        width: 100%;
+        min-height: 320px;
+        position: relative;
+        margin-top: 25px
+    }
+    
+    .details-contact .details a, .details-contact .details p {
+    /*    word-break: break-all*/
+        -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+                hyphens: auto;
+    }
+    
+    /************************ FOOTER ************************/  
+    
+    .footer .footer-menu {
+        text-align: center;
+        padding: 25px 0
+    }
+    
+    .footer h4 {
+        margin-bottom: 0;
+        padding: 10px 0;
+    }
+    
+    .footer .dropdown {
+        cursor: pointer
+    }
+    
+    .footer .dropdown + .dropdown {
+        margin-top: 0;
+    }  
+
+    .footer .dropdown > .dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+        text-align: center;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    } 
+    .footer .open > .dropdown-menu {
+        max-height: 500px;
+        -webkit-transition: all 0.6s linear;
+        transition: all 0.6s linear;
+    }
+    
+    .footer ul li:last-child{
+        margin-bottom: 10px
+    }
+    
+    /* Formulario susbcribirse */
+    .footer-bottom {
+        text-align: center
+    }
+    
+    .footer .footer-bottom .form-inline {
+        float: none
+    }
+    
+    .footer .form-inline label {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-right: 0
+    }
+    
+    .footer .footer-bottom .form-inline .form-control {
+        display: inline-block
+    }
+    
+    /* Marcas Excelencia certificada */    
+    .footer .footer-bottom .box-logo img {
+        margin: 0 15px;
+    }
+    
+    /*Input formulario*/
+    .footer .footer-bottom .form-inline .form-control {
+        width: 59%
+    }
+    
+    /************************ PALACE - HOME ************************/
+
+    .home-palace .box-alojamiento .link-content {
+        height: 300px
+    }
+    
+    .home-palace .box-alojamiento .link-content .image {
+        background-position: top center !important;
+    }
+    
+    .home-palace .box-atencion .row > div:last-child {
+        padding-left: 15px
+    }
+    
+    /************************ PALACE - BODAS ************************/
+    .box-thermas .img-thermas{
+        min-height: 205px
+    }
+    
+    .home-palace.page-eventos .box-thermas .row {
+        display: block
+    }
+    
+    .page-alojamiento.page-eventos .box-habitaciones .box-list ul li {
+        padding: 8px 15px
+    }
+    
+    .page-template-templates-palace .home-palace #reuniones.box-atencion .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    .page-template-templates-palace .home-palace #reuniones.box-atencion .row-flex .carousel {
+        margin-top: 0;
+        margin-bottom: 25px
+    }
+    
+    /************************ PALACE - BODAS ************************/
+    
+    .single-restaurantes.page-alojamiento .box-descubre .info {
+        padding-left: 0;
+        padding-bottom: 0
+    }
+    
+    
+    .page-raquet.view-contact .box-content.box-map .map-content, .page-template-templates-vpcontacto-php .box-content.box-map .map-content{
+        margin-top: 0
+    }
+    
+    /************************ PALACE - RAQUET  ************************/
+    
+    .page-raquet .box-mixin .content .btn-go {
+        margin: 0 15px
+    }
+    
+    /************************ VP - HOME ************************/
+    .home-vp .box-thermas .row {
+        display: block
+    }
+    
+    /************************ WELLNESS - HOME ************************/    
+    
+    .home-wellness.home-palace .box-header {
+        height: inherit!important;
+    }
+    
+    .home-wellness .box-header .content .btn-border, .home-wellness .box-header .content .btn-solid {
+        padding: 12px 25px 10px;
+    }
+    
+    /************************ WELLNESS - INSTALACIONES ************************/
+    
+    .page-instalaciones .box-thermas .separate {
+        margin: 15px auto 30px
+    }
+    
+    .page-instalaciones .box-thermas .row > div {
+        min-height: 300px;
+        padding: 50px 15px;
+    }
+    
+    #thermal .row-flex{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+    }
+    
+    .page-instalaciones.home-palace .box-atencion .row-flex .carousel {
+        margin-bottom: 0
+    }
+    
+    .page-instalaciones .carousel .item {
+        max-height: 300px
+    }
+    
+    #thermal .btn-go {
+        margin-bottom: 20px
+    }
+    
+    #gimnasio .row-flex{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        text-align: center
+    }
+    
+    /************************ WELLNESS - PROGRAMAS ************************/
+    
+    .page-programas .box-tratamientos .row .row {
+        padding: 0;
+    }
+    
+    .single-programas .box-small .info {
+        min-height: auto;
+        margin-bottom: 20px
+    }
+    
+    .single-programas .box-small .content {
+        padding-left: 0
+    }
+    
+    .single-programas.home-palace .carousel {
+        margin-bottom: 0
+    }
+    
+    .single-programas .box-contact .container > .row > div {
+        padding: 0 15px
+    }
+    
+    /*Single programa*/
+    
+    /*.single-programas .box-habitaciones{
+        text-align: left
+    }*/
+    
+    .single-programas .box-descubre {
+        padding: 25px 0
+    }
+    
+    .single-programas .box-descubre .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    /*.single-programas .box-small .carousel-double .item .image:last-child, .single-programas .carousel-double.big .item .image:last-child{
+        display: none
+    }*/
+    
+    .single-programas .box-small .carousel-double .item, .single-programas .carousel-double.big .item .image {
+        width: 100%;
+        height: 320px;
+        left: 0;
+    }
+    
+    .single-programas .box-small .carousel-double .image, .single-programas .carousel-double.big .item {
+        height: 100%;
+    }
+    
+    .single-programas .box-small .carousel-double .controls, .single-programas .carousel-double.big .controls,
+    .home-palace .box-atencion .carousel .controls, .page-nutricion .box-profesionales .carousel .controls {
+        bottom: 0;
+        right: 0 !important;
+        /*border: 1px solid #C9C9C9;*/
+        border:0;
+        left: initial !important;
+    }
+    
+    .page-alojamiento .box-descubre .row > div:last-child, .home-palace .box-descubre .row > div:first-child, .page-alojamiento .box-descubre .row:last-child > div:last-child {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+    
+    .single-programas .box-descubre .info {
+        padding: 0;
+        min-height: 100%
+    }
+    
+    .single-programas .box-descubre .content{
+        padding-bottom: 20px
+    }
+    
+    .single-programas .box-price {
+        margin-top: 25px;
+    }
+    
+    .single-disciplinas .box-bodas .box-price {
+        display: block
+    }
+    
+    /*Formulario reserva en single producto*/
+    .single-programas .box-contact {
+        padding: 20px
+    }
+    
+    .single-programas .box-contact .content {
+        padding: 17px 15px 15px
+    }
+    
+    /*Tratamientos*/
+    .single-tratamientos .box-tratamiento {
+        overflow: hidden
+    }
+    
+    .single-tratamientos .box-tratamiento .row-flex {
+        display: block;
+        margin-left: -15px
+    }
+    
+    .single-tratamientos .box-tratamiento .col-flex {
+        min-height: 265px
+    }
+    
+    .single-tratamientos .box-tratamiento .content {
+        padding: 20px;
+    }
+    
+    .single-tratamientos .box-tratamiento .content .wrapper {
+        min-height: inherit;
+    }
+    
+    .single-tratamientos .box-tratamiento .content .btn-solid {
+        margin-top: 0
+    }
+    
+    .page-programas .box-alojamiento .content p {
+        margin-bottom: 20px
+    }
+    
+    /************************ WELLNESS - MEDICAL ************************/
+    
+    /*Nutricion*/
+    .page-alojamiento .box-descubre {
+        padding: 25px 0
+    }
+    
+    .page-nutricion #reuniones .row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .page-nutricion .box-descubre .content {
+        min-height: inherit;
+        padding-left: 0;
+        padding-bottom: 0;
+        margin-bottom: 0
+    }
+    
+    .page-nutricion .box-habitaciones {
+        /*text-align: left*/
+    }
+    
+    .page-nutricion .box-descubre .info {
+        padding-left: 0
+    }
+    
+    /*Slider*/    
+    .page-nutricion .carousel-double .item {
+        width: 100%;
+        height: 320px;
+        left: 0;
+        padding: 0;
+    }
+    
+    .carousel-double.big .item .image {
+        height: 320px;
+        left: 0;
+    }
+    
+    .page-nutricion .box-bodas, .page-eventos .box-bodas {
+        padding: 20px;
+    }
+    
+    .page-nutricion.page-eventos .box-bodas .row > div {
+        padding: 17px 15px 15px
+    }
+    
+    
+    /*Slider simple*/
+    .page-nutricion .box-profesionales .row-flex{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .page-nutricion .box-descubre .row > div:first-child {
+        padding-right: 15px;
+    }
+    
+    .page-nutricion .box-profesionales .carousel .item {
+        width: 100%;
+        height: 320px;
+        left: 0;
+        padding: 0;
+    }
+    
+    /*Fisio*/
+    .page-alojamiento .box-descubre.box-map{
+        /*padding-top: 0*/
+    }
+    
+    .page-fisio .box-map .map-content, .page-fisio .box-map:last-child .map-content {
+        position: relative;
+        min-height: 320px;
+        width: 100%;
+        margin-bottom: 0
+    }
+    
+    .page-fisio .box-map .content {
+        padding: 0
+    }
+    
+    .page-fisio .box-map:last-child .content {
+        padding: 0
+    }
+    
+    .page-fisio .box-map .content ul {
+        margin-bottom: 20px
+    }
+    
+    /************************ WELLNESS - DISCIPLINA ************************/
+
+    .single-disciplinas .box-descubre .row-flex{
+        display: block
+    }
+    
+    .single-disciplinas .box-descubre .image {
+        min-height: 320px;
+        position: relative;
+        margin-bottom: 20px;
+        width: 100%
+    }
+    
+    .single-disciplinas .box-bodas{
+        padding: 20px 20px 40px;
+    }
+    
+    .single-disciplinas .box-bodas .row > div {
+        padding: 17px 15px 0
+    }
+    
+    .single-disciplinas .box-bodas .box-price .detail, .single-disciplinas .box-bodas .box-price .detail:last-child {
+        display: block;
+        text-align: center
+    }
+    
+    .single-disciplinas .box-bodas .box-price .detail:last-child:before{
+        width: 50px;
+        height: 1px;
+        position: relative;
+        margin: 10px auto;
+        display: block;
+    }
+    
+    /************************ GOLF - HOME ************************/
+    
+    .home-golf .box-alojamiento .content {
+        padding: 0
+    }
+    
+    .home-golf.home-palace .box-header {
+        /*height: inherit !important*/
+    }
+    
+    .home-golf .box-header .content .btn-border, .home-golf .box-header .content .btn-solid {
+        padding: 12px 25px 10px;
+    }
+    
+    .home-golf .box-content{
+        padding: 25px 0
+    }
+    
+    .home-content.home-golf .box-atencion .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .home-golf .box-atencion #carousel-atencion {
+        margin-top: 25px;
+        margin-bottom: 0
+    }
+    
+    .home-palace .box-atencion #carousel-atencion .item {
+        height: 320px
+    }
+    
+    .home-golf .box-bodas {
+        padding: 20px 20px 40px
+    }
+    
+    .home-golf .box-bodas .row > div, .page-eventos .box-bodas .row > div {
+        padding: 30px 20px 0
+    }
+    
+    .page-eventos .box-bodas .content p {
+        margin-bottom: 0
+    }
+    
+    .box-golf .box-images {
+        display: block;
+    }
+    
+    #bodas.box-content.box-bodas, .page-landing.home-palace .box-content.box-bodas {
+        padding: 25px 25px 30px 25px !important
+    }
+    
+    
+    .box-golf .box-images a {
+        width: 100%;
+        margin-bottom: 10px
+    }
+    
+    .home-palace .box-alojamiento .row .row {
+        margin: 0 -15px
+    }
+    
+    .home-palace .box-alojamiento .row .row > div {
+        padding: 0 15px
+    }
+    
+    #hoyo.tab-pane p {
+        padding: 0 10px
+    }
+    
+    /************************ GOLF - CAMPOS ************************/
+    
+    .single-campo.home-palace .box-content {
+        padding: 50px 0 25px
+    }
+    
+    .single-campo .box-details {
+        padding: 12px;
+    }
+    
+    .single-campo .box-details .text {
+        margin: 0 15px;
+    }
+    
+    .golf-membership .box-resort {
+        background-position: top center;
+    }
+    
+    .single-campo.home-palace .box-pricing {
+        padding: 20px 0
+    }
+    
+    .single-campo.home-palace .box-testimonio {
+        padding: 50px 0
+    }
+    
+    .single-campo .box-resort ul {
+        margin-top: 0
+    }
+    
+    .tarifas-responsive h3 {
+        font-size: 14px;
+        color: #7B7B7B;
+        letter-spacing: 0.07px;
+        line-height: 23px;
+        background: #F4F4F4;
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.10);
+        padding: 10px 0;
+        font-weight: 700;
+        font-family: 'avenir', sans-serif;
+    }
+    
+    .tarifas-responsive h3 br {
+        display: none;
+    }
+    
+    .home-palace .box-content .tarifas-responsive h4{
+        font-weight: 500;
+        font-size: 20px;
+        color: #BC9C29;
+        letter-spacing: 0.1px;
+        line-height: 23px;
+        margin-bottom: 0
+    }
+    
+    .home-palace .box-content .tarifas-responsive .content {
+        background-color: white;
+        margin-bottom: 10px;
+        padding: 15px 0;
+        box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.20);
+    }
+    
+    .home-palace .box-content .tarifas-responsive .col-xs-4:nth-child(1){
+        padding: 0;
+        padding-left: 15px;
+    }
+    
+    .home-palace .box-content .tarifas-responsive .col-xs-4:nth-child(2){
+        padding: 0 4px;
+    }
+    
+    .home-palace .box-content .tarifas-responsive .col-xs-4:nth-child(3){
+        padding: 0;
+        padding-right: 15px;
+    }
+    
+    .home-palace .box-content .tarifas-responsive .content h5 {
+        font-weight: 800;
+        font-size: 10px;
+        color: #7B7B7B;
+        letter-spacing: 0.83px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    
+    .home-palace .box-content .tarifas-responsive .content p{
+        font-size: 9px;
+        color: #AFAFAF;
+        letter-spacing: 0.75px;
+        margin-bottom: 10px;
+        line-height: normal;
+    }
+    
+    /************************ HEADER HOME ************************/ 
+    
+    .home-content .box-header {
+       /* min-height: 360px !important*/
+    }
+    
+    /************************ GOLF - CALENDARIO ************************/
+
+    /*.page-calendario .box-content#content .container > .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }*/
+    
+    .page-calendario .box-content .box-eventos {
+        margin-bottom: 25px
+    }
+    
+    .page-calendario .content .download {
+        /*margin-bottom: 25px*/
+    }
+    
+    /************************ GOLF - MEMBERSHIP ************************/
+        
+    .home-palace .box-descubre.box-small .row > div:first-child {
+        padding: 0 15px
+    }
+    
+    .golf-membership .box-content.box-contact .row-flex {
+        display: block;
+    }
+    
+    .golf-membership .box-membership.box-contact .container > .row > div {
+        display: block;
+        margin-bottom: 15px;
+        padding: 0
+    }
+    
+    .golf-membership .box-contact .container > .row > div:last-child{
+        margin-bottom: 0
+    }
+    
+    .golf-membership .box-send .box-form {
+        padding: 20px;
+    }
+    
+    .golf-membership.home-palace .carousel {
+        margin-bottom: 0
+    }
+    
+    .golf-membership.single-programas .box-contact .content {
+        margin: 0 15px;
+    }
+    
+    .golf-membership .box-contact h2 {
+        margin-bottom: 25px
+    }
+    
+    .golf-membership.single-programas .box-contact {
+        padding: 20px 0;
+    }
+    
+    /* HEADER SECCIONES */
+    .home-palace .box-header.header-scroll {
+        height: 320px !important;
+    }
+    
+    .header-scroll + * {
+        margin-top: 254px; 
+    }
+    
+    /************************ GOLF - MICHAEL CAMPBELL ************************/
+    
+    .page-campbell .box-champion .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .page-alojamiento .box-descubre .info{
+        min-height: inherit;
+        padding-left: 0;
+        padding-bottom: 25px
+    }
+    
+    .page-alojamiento .box-habitaciones {
+        /*text-align: left*/
+    }
+    
+    .page-campbell.home-palace .carousel{
+        margin-bottom: 0
+    }
+    
+    .page-alojamiento .box-descubre .info {
+        /*text-align: center;*/
+        margin-top: 15px
+    }
+    
+    .page-alojamiento .carousel-double .item {
+        width: 100%;
+        height: 320px;
+        left: 0;
+        padding: 0;
+    }
+    
+    .carousel-double.big .item .image:last-child, .slider-movil .item .image {
+        height: 320px !important;
+        width: 100% !important;
+    }
+    
+    .carousel-double.big .controls {
+        bottom: 0;
+        right: 0;
+        /*border: 1px solid #C9C9C9;*/
+        border: 0;
+    }
+    
+    .box-elite {
+        text-align: center
+    }
+    
+    .box-elite .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .box-elite .row-flex .col-flex {
+        margin-bottom: 25px;
+    }
+    
+    .page-campbell .box-elite p {
+        padding-right: 0
+    }
+    
+    .page-campbell .box-ciencia .box-title {
+        margin: 40px auto 0;
+    }
+    
+    .page-campbell .box-ciencia .box-title p {
+        font-size: 16px;
+        margin-bottom: 0
+    }
+    
+    .page-campbell .box-title h5:before, .page-campbell .box-title h5:after, .page-campbell .box-title h5 .bar:before, .page-campbell .box-title h5 .bar:after {
+        width: 12%;
+    }
+    
+    .carousel .controls {
+        bottom: 0;
+        right: 0;
+        /*border: 1px solid #C9C9C9;*/
+        border:0;
+        left: inherit;
+    }
+    
+    .home-palace .box-instalaciones {
+        padding-top: 25px
+    }
+    
+    .page-campbell .box-instalaciones .content > p {
+        padding-right: 0
+    }
+    
+    /************************ THERMAS - HISTORIA ************************/
+    
+    .page-template-historia .home-palace.thermas-historia .box-content {
+        padding: 0;
+    }
+    
+    .page-template-historia .home-palace.thermas-historia .box-intro:nth-child(2){
+        padding: 25px 0 110px
+    }
+    
+    .home-palace.thermas-historia .box-content.box-experience {
+        padding: 25px 0 0
+    } 
+    
+    .thermas-historia .box-ciencia .box-title {
+        padding: 20px 15px
+    }
+    
+    .thermas-historia .box-experience:before, .home-palace.thermas-historia #content.box-intro.box-last-intro {
+        padding: 25px 0
+    }
+    
+    .thermas-historia .box-experience:before, .thermas-historia .box-intro:last-child:before {
+        display: none
+    }
+    
+    /************************ THERMAS - TRATAMIENTOS ************************/
+
+    .single-tratamientos .box-tratamiento .content .info {
+        margin-right: 0
+    }
+    
+    /************************ COLLECTION - PROJECTS ************************/
+    
+    .collection-projects .box-tratamiento .row-flex > div:last-child {
+        padding-left: 15px
+    }
+    
+    /************************ PALACE - BOUTIQUE ************************/
+    
+    .page-boutique .box-alojamiento .row {
+        padding: 0
+    }
+    
+    .page-boutique .box-contact .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .page-boutique .details-contact .row > div, .page-boutique .details-contact .row > div:first-child, .page-boutique .details-contact .row > div:last-child{
+        text-align: center;
+        padding: 0 15px;
+        margin-bottom: 10px
+    }
+    
+    .page-boutique .details-contact .row > div:first-child {
+        border-right: 0;
+    }
+    
+    /************************ GOLF - SHOP & TOURS ************************/
+    
+    .golf-shop .box-contact form {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .single-tour #modal-tour .box-modal .modal-content > .row-flex > .col-xs-12 {
+        height: 220px;
+    }
+    
+    #modal-tour .box-modal .modal-content > .row-flex > .col-xs-12{
+        height: 320px;
+        /*overflow: auto;*/
+    }
+    
+    .golf-shop.home-palace .carousel {
+        margin-bottom: 0
+    }
+    
+    .single-campo .box-resume .item .info {
+        padding: 15px 30px;
+    }
+    
+    .tarifas-responsive .content-tarifa {
+        display: block;
+    }
+    
+    .tarifas-responsive .content-tarifa > .col-xs-4 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    
+    /************************ VP - HOME ************************/
+    
+    .box-experience .box-image, .box-experience .box-image.large {
+        height: 14vw;
+        min-height: 280px;
+    }
+    
+    .form-header {
+        height: 187px;
+        bottom: -90px;
+    }
+    
+    .form-header .box-form {
+        padding: 15px
+    }
+    
+    .form-header .box-form .form-group{
+        margin-bottom: 0
+    }
+    
+    .form-header .form-inline label {
+        display: block;
+    }
+    
+    .form-header .daterangepicker.box-input {
+        left: initial;
+        right: initial;
+        margin: 0 0 15px 0 !important;
+        position: relative;
+        top: initial;
+        display: block;
+        width: 100%;
+        max-width: 100%
+    }
+    
+    .form-header .box-input {
+        margin: 0 5px 0 0;
+    }
+    
+    .form-header .daterangepicker.box-input .form-control{
+        display: inline-block
+    }
+    
+    .form-header .btn-solid {
+        width: 100%;
+        margin: 0 !important;
+    }
+    
+    .home-thermas .box-content.box-atencion .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .home-thermas .box-content.box-atencion .row-flex #carousel-atencion {
+        margin-bottom: 25px
+    }
+
+    .home-thermas .box-alojamiento .box-logos img {
+        max-height: 75px;
+        margin: 0 15px 10px 15px
+    }
+    
+    /************************ THERMAS - HOME ************************/
+    
+    .home-thermas.home-palace .form-header .form-group:last-child .box-input .form-control {
+        max-width: 100%;
+        text-align: center
+    }
+    
+    .home-thermas.home-palace .box-header {
+        margin-bottom: 20px
+    }
+    
+    .home-palace .box-experiencia .slide {
+        margin-bottom: 0;
+        padding: 0 15px
+    }
+    
+    
+    /************************ THERMAS - INSTALACIONES ************************/
+
+    .thermas-instalaciones .box-descubre .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .thermas-instalaciones .box-descubre#clasicas .row-flex, .thermas-instalaciones .box-descubre#junior .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .thermas-instalaciones .box-descubre .carousel {
+        margin-bottom: 25px
+    }
+    
+    .carousel .item {
+        height: 320px !important
+    }
+    
+    .page-alojamiento .box-habitaciones ul {
+        padding: 0;
+        text-align: center;
+        display: block;
+    }
+
+    .thermas-instalaciones.single-restaurantes .box-descubre .carousel .item {
+        height: 320px
+    }
+    
+    .single-restaurantes .box-descubre .box-icons ul li {
+        padding-right: 15px
+    }
+    
+    .single-programas.thermas-instalaciones .box-descubre.box-small .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    
+    .single-programas.thermas-instalaciones .box-descubre.box-small .content{
+        text-align: left;
+        min-height: inherit
+    }
+    
+    .thermas-instalaciones.single-programas .box-descubre .row:last-child > div:last-child {
+        padding: 0 15px;
+    }
+    
+    .thermas-instalaciones.single-programas .box-small .content {
+        padding-left: 0
+    }
+    
+    .page-programas .box-alojamiento {
+        padding: 25px 0
+    }    
+    
+    /************************ THERMAS - HISTORIA ************************/
+    
+    .thermas-historia .box-text .row-flex, .thermas-historia .box-middle .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    
+    .thermas-historia .box-hostal .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    
+    
+    .thermas-historia .box-text .image, .thermas-historia .box-middle .image {
+        width: 100%;
+        height: 124px;
+    }
+    
+    .thermas-historia .box-title h3 {
+        font-size: 24px;
+    }
+    
+    .thermas-historia .box-middle .box-title {
+        padding: 20px 45px 10px;
+    }
+    
+    .thermas-historia .box-text:before {
+        display: none
+    }
+    
+    .thermas-historia .box-title {
+        margin: 30px auto;
+        padding: 20px 10px 10px;
+    }
+    
+    .thermas-historia .box-experience .box-slide .image {
+        min-height: 320px;
+        max-height: 375px;
+        height: 100vh;
+    }
+    
+    .thermas-actividades.page-inmobiliaria .box-properties .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    
+    .thermas-actividades.home-palace .box-slider .carousel {
+        margin-bottom: 0;
+        margin-top: 0
+    }
+    
+    .thermas-actividades.page-inmobiliaria .carousel .item{
+        height: 100% !important;        
+    }
+    
+    .thermas-actividades.page-inmobiliaria .box-properties .box-property .col-flex {
+        height: 256px !important;
+        background-position: center top !important;
+    }
+    
+    .thermas-actividades .box-property .content {
+        padding: 20px 15px;
+        height: inherit;
+    }
+    
+    .thermas-actividades .box-property .btn-border {
+        position: relative;
+        bottom: initial;
+        left: initial;
+    }
+    
+    .thermas-actividades .carousel .carousel-inner {
+        background: white;
+    }
+    
+    .thermas-actividades .carousel .carousel-control.left {
+        left: -25px;
+    }
+    
+    .thermas-actividades .carousel .carousel-control.right {
+        right: -25px
+    }
+    
+    .thermas-actividades .carousel .carousel-control img {
+        margin: 0
+    }
+    
+    /************************ THERMAS - PROFESIONALES ************************/
+
+    .home-palace .box-content.box-team{
+        padding: 0 !important
+    }
+    
+    /************************ THERMAS - PROGRAMAS ************************/
+    
+    .single-curas.home-palace .carousel{
+        margin-bottom: 0
+    }
+    
+    .single-programas-simple.single-programas .box-small .info {
+        padding-bottom: 0
+    }
+    
+    
+    /************************ COLLECTION - HOME ************************/
+    
+    .page-template-templates-collection .home-collection .box-header {
+        min-height: 500px !important;
+        height: 100% !important
+    }
+    
+    .home-collection .box-experience .box-slide .image {
+        height: 320px;
+    }
+    
+    .home-collection .form-header {
+        height: 230px;
+        bottom: -115px;
+    }
+    
+    .home-collection .form-inline .form-group:last-child {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+    
+    .home-collection .form-inline .form-group:last-child .box-input{
+        margin-bottom: 15px
+    }
+    
+    .home-collection .form-inline .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .home-collection .form-header .box-form .form-group.long {
+        display: inline-block;
+        width: 49%
+    }
+    
+    .home-collection .form-header .box-form .form-group.long .form-control{
+        width: 100%
+    }
+    
+    .home-collection .form-header .box-form .form-group .form-control{
+        display: inline-block
+    }
+    
+    .home-collection .form-header .box-input img {
+        width: 30px;
+        height: 5.25px
+    }
+    
+    .home-collection .form-header .box-form .form-group .box-input{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin: 0;
+    }
+    
+    .home-collection .box-collection {
+        padding-top: 120px !important
+    }
+    
+    .home-collection .box-content {
+        padding: 25px 0
+    }
+    
+    .home-content.home-palace.home-collection .form-header .form-group:nth-child(2) .form-control {
+        max-width: 100%
+    }
+    
+    
+    .box-slider .row-flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .home-vp .box-slider .carousel, .home-palace .box-slider .carousel {
+        margin-bottom: 0;
+        margin-top: 25px;
+    }
+    
+    .box-slider.box-collection .carousel:before {
+        display: none
+    }
+    
+    .home-collection .box-experience .row.box-slide{
+        position: relative;
+        min-height: 320px;
+        background: rgba(0,0,0,.4);
+    }
+    
+    .home-collection .box-experience .box-slide a{
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        -webkit-transition: 0.6s all ease;
+        transition: 0.6s all ease;
+    }
+    
+    .home-collection .box-experience .box-slide a.active{
+        opacity: 1;
+        z-index: 2;
+        -webkit-transition: 0.8s all ease;
+        transition: 0.8s all ease;
+    }
+    
+    
+    /************************ COLLECTION - PROYECTOS ************************/
+    
+    .single-projects .box-features .container {
+        padding: 0
+    }
+    
+    .collection-projects.single-tratamientos .box-tratamiento .col-flex {
+        min-height: 256px;
+    }
+    
+    .single-inmobiliaria.single-projects .box-slick {
+        height: auto !important;
+        margin-top: 25px
+    }
+    
+    .slick-initialized .slick-slide {
+        margin: 0
+    }
+    
+    .single-projects .box-slick .image, .single-inmobiliaria .box-slick .image {
+        min-height: 320px;
+        max-height: 320px;
+        height: 100%;
+    }
+    
+    .single-inmobiliaria .box-slick .image img {
+        min-height: 320px
+    }
+    
+    .single-projects .box-features .slick-slide.slick-active .image {
+        height: 300px;
+        margin-top: 0;
+    }
+    
+    /************************ COLLECTION - INMOBILIARIA ************************/
+    .temp-inmobiliaria {
+        padding-top: 66px
+    }
+    
+    
+    .page-inmobiliaria .box-header .header-title {
+        text-align: center
+    }
+    
+    .page-inmobiliaria .box-header {
+        min-height: 320px !important;
+        height: 320px !important;
+    }
+    
+    .page-inmobiliaria .box-experience .box-slide .image {
+        height: 320px;
+    }
+    
+    .page-inmobiliaria .box-header .form-header {
+        height: 300px;
+        bottom: -150px;
+    }
+    
+    .page-inmobiliaria .form-inline .form-group:last-child {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+    
+    .page-inmobiliaria .form-inline .form-group:last-child .box-input{
+        margin-bottom: 15px
+    }
+    
+    .page-inmobiliaria .form-inline .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .page-inmobiliaria .form-header .box-form .form-group.long {
+        display: inline-block;
+        width: 49%
+    }
+    
+    .page-inmobiliaria .form-header .box-form .form-group.long .form-control{
+        width: 100%
+    }
+    
+    .page-inmobiliaria .form-header .box-form .form-group .form-control{
+        display: inline-block;
+        width: 50%;
+        max-width: inherit;
+        text-align: left;
+    }
+    
+    .page-inmobiliaria .form-header .box-input img {
+        width: 30px;
+        height: 5.25px
+    }
+    
+    .page-inmobiliaria .form-header .box-form .form-group .box-input{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center
+    }
+    
+    .page-inmobiliaria .box-collection {
+        padding-top: 120px !important
+    }
+    
+    .box-content.box-properties {
+        padding-top: 170px
+    }
+    
+    .page-inmobiliaria .box-properties .row-flex{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .page-inmobiliaria .box-property p {
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .page-inmobiliaria .box-property .info .amount {
+        float: none;
+        margin: 0 0 10px 0;
+        text-align: left;
+    }
+    
+    .page-inmobiliaria .box-property .btn-border {
+        margin-top: 0
+    }
+    
+    .page-inmobiliaria .box-properties .box-property .col-flex {
+        height: 240px;
+    }
+    
+    .single-inmobiliaria .box-features ul li:nth-child(2) span {
+        border-top: 0
+    }
+    
+    /*Formulario inmobiliaria*/
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-header.form-inmobiliaria-header {
+        padding: 50px 0;
+        height: auto !important;
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-header.form-inmobiliaria-header .form-bottom {
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: -60px
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-header.form-inmobiliaria-header .form-header{
+        position: relative;
+        bottom: inherit;
+        height: auto
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-header.form-inmobiliaria-header .form-header .box-form{
+        margin-bottom: 0
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties .container {
+        padding: 0
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties {
+        padding-top: 45px
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties .form-bottom.count {
+        top: 11px
+        /*position: relative;
+        bottom: inherit;
+        top: inherit;
+        left: inherit;
+        transform: translate(0);*/
+    }
+    
+    /************************ COLLECTION - CONTACTO ************************/
+    
+    .box-map {
+        display: -webkit-box;
+        display: -ms-flexbox;
+       padding-bottom: 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .view-contact .box-content.box-map {
+        padding-bottom: 0 !important;
+    }
+    
+    .box-map .map-content {
+        width: 100%;
+        min-height: 320px;
+        position: relative;
+        margin-top: 25px
+    }
+    
+    .box-map .container {
+        width: 100%;
+    }
+    
+    .box-map .content {
+        padding-left: 0
+    }
+    
+    .slick-prev, .slick-prev:hover, .slick-prev:focus {
+        left: 0;
+    }
+    
+    .slick-prev, .slick-next, .slick-prev:hover, .slick-next:hover, .slick-prev:focus, .slick-next:focus {
+        right: 0;
+    }
+    
+    .slick-slide:before {
+        display: none
+    }
+    
+    .collection-contact .box-tratamiento .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column        
+    }
+    
+    .collection-contact .box-tratamiento .col-flex {
+        height: 320px
+    }
+    
+    .collection-contact .box-tratamiento .content {
+        padding: 20px 10px
+    }
+    
+    .collection-contact .box-tratamiento h3 {
+        width: 100%
+    }
+    
+    .collection-contact .box-tratamiento .btn-border {
+        top: 20px;
+        right: 25px;
+        color: #BC9C29;
+        position: relative;
+        left: inherit;
+        bottom: inherit;
+        right: inherit;
+        top: inherit;
+        margin-top: 20px;
+    }
+    
+    
+    /************************ PALACE - HOME ************************/
+    
+    .home-palace .box-header {
+        height: 600px !important;
+    }
+    
+    .home-palace .form-header {
+        height: 205px;
+        bottom: -102px;
+    }
+    
+    .home-palace .form-header .form-group:last-child .box-input {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        margin-right: 0;
+        margin-bottom: 15px
+    }
+    
+    .home-palace .form-header .form-group:last-child .box-input .form-control {
+        max-width: 50%
+    }
+    
+    .form-header .form-control {
+        text-align: center
+    }
+    
+    .home-palace .box-content, .home-palace .box-content.box-atencion.box-descubre {
+        padding: 25px 0
+    }
+    
+    .home-palace .box-experiencia {
+        padding: 100px 0 25px
+    }
+    
+    .home-palace .box-experiencia .carousel .item {
+        height: auto !important
+    }
+    
+    .home-palace .box-content.box-instalaciones {
+        padding-bottom: 0 !important
+    }
+    
+    .home-palace .box-atencion {
+        /*padding-top: 80px !important*/
+    }
+    
+    .home-palace .box-atencion .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .page-template-templates-palacehome-php .home-palace .box-atencion .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .home-palace .box-atencion .row-flex .carousel {
+        margin-bottom: 25px
+    }
+    
+    .page-template-templates-palacehome-php .home-palace .box-atencion .row-flex .carousel {
+        margin-top: 25px;
+        margin-bottom: 0;
+    }
+    
+    .home-palace .carousel-double .item {
+        padding: 0
+    }
+    
+    /************************ PALACE - ALOJAMIENTO ************************/
+    
+    .home-palace .carousel {
+        margin-bottom: 25px;
+    }
+    
+    /************************ PALACE - EVENTOS ************************/
+
+    .page-eventos .box-descubre .box-buttons {
+        margin-top: 10px
+    }
+    
+    /************************ VP - HOME ************************/
+    
+    .home-vp .form-inline .form-group:nth-child(2) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    
+    .home-vp .form-inline .form-group:nth-child(2) .box-input.select, .home-vp .form-inline .form-group:nth-child(2) button.btn-solid {
+        width: 50%;
+        margin-right: 15px;
+    }
+    
+    .home-vp .box-collection .btn-go {
+        margin-top: 0
+    }
+    
+    .home-vp .logo-content {
+        margin-bottom: 20px
+    }
+    
+    .home-vp .content h3{
+        margin-bottom: 20px
+    }
+    .home-vp .box-header {
+        /*height: 600px !important*/
+    }
+    
+    .home-vp .form-header {
+        height: 205px;
+        bottom: -102px;
+    }
+    
+    .form-header .daterangepicker.box-input .form-control {
+        display: inline-block;
+        max-width: 110px;
+    }
+    .home-vp .form-header .form-group:last-child .box-input {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        margin-right: 0;
+        margin-bottom: 15px
+    }
+    
+    .home-vp .form-header .form-group:last-child .box-input .form-control {
+        max-width: 50%
+    }
+    
+    .home-vp .row-flex{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .home-vp .box-palace .row-flex{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .home-vp .carousel {
+        margin-bottom: 0;
+        margin-top: 35px
+    }
+    
+    .box-palace .row > div:last-child, .box-palace .row > div:first-child {
+        padding: 0 15px
+    }
+    
+    .home-vp section {
+        text-align: center
+    }
+    
+    .carousel {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    
+    .home-vp .box-palace {
+        padding-bottom: 0 !important
+    }
+    
+    .home-vp .img-thermas {
+        min-height: 205px
+    }
+    
+    .home-vp .box-medical .btn-go{
+        margin-bottom: 20px
+    }
+    
+    .home-vp .box-experience .btn-go, .page-template-landing .home-vp .box-experience .btn-go {
+        margin-bottom: 20px
+    }
+    
+    .home-vp .box-experience .row > div .box-image {
+        height: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .home-vp .box-experience .row > div .box-image:last-child{
+        margin-bottom: 0
+    }
+    
+    .home-vp .box-experience .row > div .box-image:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: inherit;
+        height: inherit;
+        background: inherit;
+        background-image: -webkit-linear-gradient(rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.80) 100%);
+        background-image: -o-linear-gradient(rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.80) 100%);
+        background-image: linear-gradient(rgba(0,0,0,0.00) 50%, rgba(0,0,0,0.80) 100%);
+        z-index: 1;
+        opacity: 1;
+    }
+    
+    .home-vp .box-experience .box-image .content {
+        opacity: 1;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        top: initial;
+        transform: translate(0);
+        -webkit-transform: translate(0);
+        text-align: left;
+        z-index: 2;
+    }
+    
+    .home-vp .box-experience .box-image .content h5 {
+        margin-bottom: 10px;
+    }
+    
+    .home-vp .box-experience .box-image .content p {
+        display: none
+    }
+    
+    .home-vp .box-golf {
+        padding-bottom: 0
+    }
+    
+    .home-vp .box-experience {
+        margin-bottom: 15px;
+    }
+    
+    .page-template-home .home-vp.home-content .box-experience{
+        margin-bottom: 0;
+    }
+    
+    /************************ PALACE - ALOJAMIENTO ************************/
+    
+    .page-alojamiento #habitaciones .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .page-alojamiento .box-alojamiento {
+        /*padding-top: 100px !important*/
+    }
+    
+    .single-alojamiento .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column    
+    }
+    
+    .single-alojamiento .carousel {
+        margin-bottom: 35px
+    }
+    
+    .page-alojamiento .box-suites .row + .row > div:last-child .link-content {
+        width: 100%;
+        margin-top: 0;
+        margin: 0 0 10px;
+    }
+    
+    /************************ PALACE - EVENTOS ************************/
+    
+    .page-eventos .box-descubre#productos .row > div:last-child {
+        padding-left: 15px;
+    }
+    
+    .page-eventos .box-descubre .btn-solid{
+        margin-top: 5px
+    }
+    
+    .page-eventos .box-alojamiento.box-top .btn-solid {
+        margin-top: 0
+    }
+
+    .carousel-double.reverse .item .image:first-child {
+        width: 100%;
+    }
+    
+    .page-eventos #productos.box-descubre > .container > .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+    }
+    
+    .slider-movil .item .image{
+        position: relative
+    }
+    
+    .slider-movil .item .image:last-child {
+        width: 100%;
+        height: 320px;
+        right: inherit !important;
+    }
+    
+    .carousel-double .item {
+        height: 320px;
+    }
+    
+    .page-eventos .box-habitaciones .box-list ul li:before {
+        display: none
+    }
+    
+    .page-eventos .box-descubre .content h4 {
+        margin-top: 0
+    }
+    
+    /************************ PALACE - BODAS ************************/
+    
+    .page-template-bodas .page-eventos .box-descubre .btn-solid {
+        margin-top: 10px;
+        margin-bottom: 10px
+    }
+    
+    .page-template-bodas .box-atencion.box-descubre .btn-border {
+        margin-left: 5px;
+        margin-bottom: 10px
+    }
+    
+    /************************ PALACE - RESTAURANTE ************************/
+    
+    .single-restaurantes .box-habitaciones .box-image {
+        top: -335px;
+    }
+    
+    .single-restaurantes .box-descubre {
+        padding-top: 0 !important
+    }
+    
+    .single-restaurante .box-habitaciones {
+        padding-bottom: 0 !important;
+        text-align: center;
+    }
+    
+    .single-restaurante .box-habitaciones h1 {
+        margin-bottom: 10px
+    }
+    
+    .single-restaurante .box-descubre .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;        
+    }
+    
+    .single-restaurante .box-descubre .carousel {
+        margin-top: 25px;
+        margin-bottom: 0
+    }
+    
+    .single-restaurantes .box-descubre .sub-content h4 {
+        margin-top: 0
+    }
+    
+    /************************ PALACE - INSTALACIONES ************************/
+    
+    .page-template-templates-palace .box-intro-instalaciones.box-atencion h1 {
+        margin-bottom: 20px
+    }
+    
+    .page-template-templates-palace .box-intro-instalaciones.box-atencion .row-flex{
+        background-color: #F3F2F2;
+        padding-top: 25px
+    }
+    
+    .page-instalaciones.page-eventos .box-intro-instalaciones .box-details .text {
+        display: inline-block;
+        margin: 0 25px 0;
+    }
+    
+    .page-instalaciones.page-eventos .box-intro-instalaciones .box-details .text:nth-child(1) {
+        margin: 0
+    }
+
+    .page-instalaciones.page-eventos .box-intro-instalaciones .box-details .text:nth-child(3) {
+        margin: 0
+    }
+    
+    /************************ PALACE - BOUTIQUE ************************/
+    
+    .page-boutique .box-descubre > .container > .row-flex{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;          
+    }
+    
+    .page-boutique .box-descubre .carousel {
+        margin-bottom: 20px
+    }
+    
+    .page-boutique .box-descubre .carousel .item {
+        height: 320px
+    }
+    
+    .page-boutique .details-contact {
+        padding-top: 0
+    }
+    
+    /************************ PALACE - RAQUET ************************/
+    
+    .page-raquet .box-content.box-descubre .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;      
+    }
+    
+    .page-raquet .carousel-double.big .item {
+        height: 320px
+    }
+    
+    .page-raquet .carousel-double.big .item .image {
+        width: 100%;
+        height: 320px;
+    }
+    
+    .page-raquet .box-descubre .content.info {
+        padding: 0;
+        min-height: auto;
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
+    
+    .page-raquet .box-descubre .content h4 {
+        margin-top: 0
+    }
+    
+    .page-raquet .box-descubre .sub-content {
+        left: 0;
+        /*text-align: center*/
+    }
+    
+    .page-raquet .carousel-double.big .controls {
+        right: 0;
+        bottom: 0;
+    }
+    
+    .page-raquet .box-mixin {
+        padding: 15px 0 !important
+    }
+    
+    .page-raquet .box-mixin .content {
+        padding: 20px
+    }
+    
+    .page-raquet .box-mixin .content h2 {
+        margin-bottom: 20px;
+    }
+    
+    .page-raquet .box-mixin .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;  
+    }
+    
+    .page-raquet .box-mixin .row-flex > div[class^="col-xs-"]:first-child {
+        margin-bottom: 15px;
+    }
+    
+    .page-raquet .box-descubre .content .btn-border:last-child{
+        margin-right: 0
+    }
+    
+    .page-raquet .box-descubre .content p:last-child{
+        margin-bottom: 0
+    }
+    
+    /************************ BLOG - HOME ************************/
+    
+    .page-blog .box-news .category span {
+        width: 30%
+    }
+    
+    .page-blog .box-news .category span:nth-child(2){
+        width: 50%
+    }
+    
+    .page-blog section .row .col-xs-12 {
+        margin-bottom: 15px;
+    }
+
+    .page-blog section .row .col-xs-12:last-child {
+        margin-bottom: 0
+    }
+    
+    .page-blog .box-news .content .row {
+        height: 340px
+    }
+    
+    /*fondo*/
+    .page-blog .box-header {
+        top: 25px
+    }
+    
+    .page-blog {
+    background: -moz-linear-gradient(top, rgba(34,37,48,0) 0%, rgba(31,31,44,0.5) 3%, rgba(30,32,46,1) 5%, rgba(30,37,61,1) 100%);
+        background: -webkit-linear-gradient(top, rgba(34,37,48,0) 0%,rgba(31,31,44,0.5) 3%,rgba(30,32,46,1) 5%,rgba(30,37,61,1) 100%);
+        background: linear-gradient(to bottom, rgba(34,37,48,0) 0px,rgba(31,31,44,0.5) 3%,rgba(30,32,46,1) 5%,rgba(30,37,61,1) 100%);
+    } 
+    
+    /************************ VP - HOME ************************/
+    
+    .box-header .content {
+        top: 45%;
+        transform: translate(-50%, -45%) translate3d(0,0,0);
+        -webkit-transform: translate(-50%, -45%) translate3d(0,0,0);
+    }
+    
+    
+    .page-privilege form .btn-solid {
+        padding: 8px 25px
+    }
+    
+    /************************ VP - LANDING ************************/
+    
+    .page-landing .box-collection .row-flex{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .page-landing.home-thermas .box-spa p {
+        padding: 0
+    }
+    
+    /************************ ESTILOS RESPONSIVE ************************/
+
+    .home-content .box-content.box-padding-top, .page-instalaciones .box-content.box-padding-top, .main-contact .box-padding-top, .home-palace.page-alojamiento .box-alojamiento.box-padding-top {
+        padding-top: 110px;
+    }
+    
+    .home-content .box-content.box-nobottom, .single-inmobiliaria.single-projects .box-content.box-map.box-nobottom, .home-palace.home-content .box-atencion.box-content.box-nobottom,
+    .home-palace.page-alojamiento .box-alojamiento.box-villas.box-nobottom, .home-palace .box-content.box-nobottom, .page-inmobiliaria.single-inmobiliaria .box-nobottom, .single-post .box-nobottom{
+        padding-bottom: 0 !important
+    }
+    
+    .home-palace.home-content .box-atencion.box-content.box-top {
+        padding-top: 25px !important
+    }
+    
+    .texto-centrado {
+        text-align: center
+    }
+    
+    .home-palace .box-content.box-notop, .home-palace .box-content.box-atencion.box-descubre.box-notop {
+        padding-top: 0
+    }
+    
+    .box-header .box-offers.show .carousel {
+        right: 15px
+    }
+    
+    .sep-button{
+        margin-bottom: 10px !important;
+        margin-top: 20px !important
+    }
+    
+    .sep-button-top{
+        margin-bottom: 20px !important
+    }
+    
+    .page-raquet .box-intro .btn-solid.sep-button-top {
+        margin-top: 0
+    }
+    
+    .box-buttons.sep-button-top{
+        margin-bottom: 40px !important
+    }
+    
+    .page-landing .box-slider .box-button + .btn-solid.sep-button-top {
+        margin-top: 0
+    }
+    
+    /* CONTACTO GENERAL */
+    .main-contact .box-contact:before {
+        display: none
+    }
+    
+    .main-contact.collection-contact .box-content {
+        background: white
+    }
+    
+    .main-contact .box-contactos.row-flex{
+        display: block
+    }
+    
+    .main-contact .box-contactos .box-resort {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .main-contact .box-contactos .box-resort:last-child{
+        margin-bottom: 0
+    }
+    
+    .box-map .content form {
+        margin-bottom: 25px
+    }
+    
+    /*Cajas sites*/
+    .main-contact .box-contactos .box-resort .content h3 {
+        position: relative;
+        top: inherit;
+        margin-bottom: 20px;
+    }
+    
+    .main-contact .box-contactos .box-resort:hover .content h3 {
+        opacity: 1;
+    }
+
+    .main-contact .box-contactos .box-resort .content .btn-solid {
+        opacity: 1;
+        background: rgba(188,156,41,1);
+    }
+    
+    .main-contact .box-contactos .box-resort:hover:before {
+        opacity: 1
+    }
+    
+    /*LANDINGS*/
+    
+    .page-landing.home-thermas .box-content.box-atencion .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .page-template-landing .home-thermas .box-content.box-atencion .row-flex #carousel-atencion{
+        margin-bottom: 0;
+        margin-top: 25px
+    }
+    
+    .page-template-landing .page-inmobiliaria .box-properties .box-property .col-flex {
+        min-height: 220px
+    }
+    
+    .page-template-landing .carousel-landing .item {
+         height: inherit !important;
+
+    }
+
+    .page-template-templates-palace .home-palace .box-atencion .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse
+    }
+    
+    .page-template-templates-palace .home-palace .box-atencion .row-flex .carousel {
+        margin-top: 25px;
+        margin-bottom: 0
+    }
+    
+    /* CONTACTO GENERAL */
+    
+    .main-contact .box-contact .row > div:first-child .content{
+        padding-right: 0
+    }
+    
+    .box-modal .modal-footer .box-footer {
+        text-align: left
+    }
+    
+    .box-modal .modal-footer .box-footer a.phone {
+        margin-bottom: 5px
+    }
+    
+    .single-programas.single-ofertashome .box-small .content {
+        padding-left: 0
+    }
+    
+    
+    /* FOOTER NEWSLETTER */
+    
+    .footer .footer-bottom .form-inline .form-group {
+        display: block
+    }
+    
+    .footer .footer-bottom .mc4wp-form {
+        width: 100%
+    }
+    
+    .footer .footer-bottom .mc4wp-response {
+        position: relative;
+        top: inherit;
+        margin-top: 5px;
+    }
+    
+    .footer .social-right{
+        float: none;
+    }
+    
+    .footer .footer-social .social-right li{
+        float: right;
+    }
+    
+    .footer .footer-social .social-right .icon.mail{
+        margin-right: 8px;
+    }
+    
+    .footer a, .footer ul li, .footer p {
+        text-align: center;
+    }
+    
+}
+/*FIN 767*/
+
+@media (max-width: 600px) {
+    /************************ GOLF - MICHAEL CAMPBELL ************************/
+    .page-campbell .box-ciencia .box-title {
+        margin: 40px 15px 0;
+    }
+    
+    /************************ GOLF - SHOP & TOURS ************************/
+    .box-modal{
+        max-width: 95%;
+    }
+    
+    #modal-tour .row-flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    #modal-tour .box-modal .modal-content .row > div:first-child {
+        padding-right: 15px;
+        min-height: 220px;
+    }
+    
+    #modal-tour .box-modal .modal-content .carousel .item {
+        min-height: 220px;
+        height: 220px !important;
+    }
+    
+    #modal-tour .box-modal .modal-content .carousel .item .image {
+        height: 220px;
+    }
+    
+    #modal-tour .box-modal .modal-content {
+        text-align: center
+    }
+    
+    .daterangepicker {
+        max-width: 320px;
+        width: 100%
+    }
+    
+    /*.daterangepicker.dropdown-menu.ltr.show-calendar.opensright {
+        height: 315px;
+        overflow: hidden;
+    }
+    
+    .daterangepicker .calendar th.next available{
+        top: 32px;
+        position: absolute
+    }*/
+    
+        /*Formulario inmobiliaria*/
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-header.form-inmobiliaria-header {
+        padding: 50px 0;
+        height: auto !important;
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-header.form-inmobiliaria-header .form-bottom {
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: -60px
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-header.form-inmobiliaria-header .form-header{
+        position: relative;
+        bottom: inherit;
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties .container {
+        padding: 0
+    }
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties {
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+    
+    .page-id-21 .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties, .page-id-183 .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties {
+        padding-top: 10px
+    }
+
+    
+    .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties .form-bottom.count {
+        position: relative;
+        top: inherit;
+        transform: translate( 0%);
+        -webkit-transform: translate(0%);
+        left: 15px;
+        text-align: left;
+        margin-bottom: 5px;
+        max-width: 50%;
+    }
+
+    .temp-inmobiliaria.page-inmobiliaria .box-content.box-properties .form-bottom.count .num-properties {
+        text-align: left
+    }
+    
+    .form-bottom .filter-features {
+        left: 0;
+        right: inherit;
+        top: 20px;
+        text-align: left;
+    }
+    
+    /************************ PALACE - INSTALACIONES ************************/
+    
+    .page-instalaciones.page-eventos .box-intro-instalaciones .box-details .text
+        margin-bottom: 10px
+    }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {   
+    
+    .daterangepicker .cancelBtn,
+    .daterangepicker .applyBtn{
+        padding: 10px 25px;
+    }
+    
+    .home-palace .box-header {
+        /*height: inherit !important;*/
+    }
+    
+    #modal-contact .box-modal .modal-content {
+        max-height: 445px !important
+    }
+    
+    /************************ FOOTER ************************/  
+    /* Marcas Excelencia certificada */    
+    .footer .footer-bottom .box-logo img {
+        /*width: 45px;*/
+        margin: 5px 15px;
+    }
+    
+   /*Social icon footer*/
+    .footer .footer-social .icon, .footer .footer-social .icon:before{
+        margin-bottom: 8px
+    }
+    
+    .footer .footer-social{
+        padding-bottom: 22px
+    }
+    
+    /************************ WELLNESS - PROGRAMAS ************************/
+    
+    .point-list li, .point-list li:first-child, .point-list li:last-child {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .point-list li:before {
+        display: none;
+    }
+    
+    .home-vp .point-list li, .home-vp .point-list li:first-child, .home-vp .point-list li:last-child {
+        width: inherit;
+        padding: 0 10px;
+    }
+    
+    .home-vp .point-list li:last-child:before {
+        display: none
+    }
+    
+    .home-vp .point-list li:before {
+        display: block;
+    }
+    
+    .single-programas .box-price h5 {
+        margin-bottom: 10px;
+    }
+    
+    .single-programas .box-price h5:last-child{
+        margin-bottom: 0
+    }
+    
+    .single-programas .box-price h5 span {
+        display: block;
+        margin-left: 0
+    }
+
+    .single-curas .box-descubre .info .box-price h5 span span {
+        display: inline-block
+    }
+    
+    /************************ WELLNESS - PROFESIONALES ************************/
+    
+    .page-profesionales .box-team .box-text {
+        min-height: 700px
+    }
+    
+    /************************ GOLF - CAMPOS ************************/
+    
+    .single-campo .box-details {
+        padding: 10px;
+    }
+    
+    .single-campo .box-details .text {
+        margin: 0 5px;
+    }
+    
+    .single-campo .box-details .text img {
+        max-height: 28px;
+        margin-right: 5px;
+    }
+
+    .single-campo .box-details .text:nth-child(2) img {
+        max-height: 24px;
+    }  
+    
+    .home-palace .box-content .tarifas-responsive .col-xs-4 {
+        /*width: 100% !important;*/
+        padding: 0 5px !important;
+    }
+    
+    .home-palace .box-content .tarifas-responsive .content {
+        padding: 15px 10px
+    }
+    
+    .home-palace .box-content .tarifas-responsive .col-xs-4:nth-child(1) {
+        
+    }
+    
+    /* Tabla mapa */
+    
+    .single-campo .box-resume .nav-tabs > li > a {
+        padding: 20px 20px 15px;
+        font-size: 12px;
+    }
+    
+    .single-campo .box-resume .tab-content .table td {
+        font-size: 12px;
+    }
+    
+    .single-campo .box-resume .tab-content .table-striped td:first-child {
+        padding-left: 10px;
+    }
+    
+    .single-campo .box-resume .tab-content .table-striped td:nth-last-child(2) {
+        padding-left: 10px;
+    }
+    
+    .single-campo .box-resume .tab-content .table-striped td:last-child {
+        padding-right: 20px
+    }    
+    
+    /************************ GOLF - MICHAEL CAMPBELL ************************/
+    
+    .page-campbell .box-title h5:before, .page-campbell .box-title h5:after, .page-campbell .box-title h5 .bar:before, .page-campbell .box-title h5 .bar:after {
+        max-width: 15px;
+        min-width: 5px;
+    }
+    
+    /************************ THERMAS - INSTALACIONES ************************/
+    
+    .thermas-actividades .point-list li, .thermas-actividades .point-list li:first-child, .thermas-actividades .point-list li:last-child {
+        width: auto
+    }
+    
+    .thermas-actividades .box-properties {
+         width: 80%;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    .thermas-actividades .carousel .carousel-control.left {
+        left: -15px
+    }
+    
+    .thermas-actividades .carousel .carousel-control.right {
+        right: -15px
+    }
+    
+    /************************ COLLECTION - HOME ************************/
+    
+    .home-collection .form-header {
+        height: 285px;
+        bottom: -142.2px;
+    }
+    
+    .home-collection .form-header .box-form .form-group.long {
+        width: 100%
+    }
+    
+    .home-collection .form-header .btn-solid {
+        width: 100%;
+        margin-left: 0
+    }
+    
+    .home-collection .form-header .box-form .form-group .box-input {
+        margin-right: 0
+    }
+    
+    .home-collection .box-collection {
+        padding-top: 150px !important;
+    }
+    
+    /************************ COLLECTION - INMOBILIARIA ************************/
+    
+    .page-inmobiliaria .box-header .form-header {
+        height: 320px;
+        bottom: -160px
+        
+    }
+    
+    .page-inmobiliaria .form-header .box-form .form-group.long {
+        width: 100%
+    }
+    
+    .page-inmobiliaria .form-header .btn-solid {
+        width: 100%;
+        margin-left: 0
+    }
+    
+    .page-inmobiliaria .form-header .box-form .form-group .box-input {
+        margin-right: 0
+    }
+    
+    .page-inmobiliaria .box-collection {
+        padding-top: 150px !important;
+    }
+    
+    .page-inmobiliaria .box-content.box-properties {
+        padding-top: 230px
+    }
+    
+    .form-bottom .filter-features {
+        left: 0;
+        right: inherit;
+        top: 20px;
+        text-align: left;
+    }
+    
+    .page-inmobiliaria .box-properties .box-property .col-flex {
+        height: 240px
+    }
+    
+    
+    .collection-contact .box-tratamiento .col-flex {
+        height: 240px;
+    }
+    
+    .collection-contact .box-tratamiento .btn-border {
+        position: relative;
+        top: inherit;
+        right: inherit;
+    }
+    
+    /*.collection-contact .box-tratamiento .content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
+    }
+    
+    .collection-contact .box-tratamiento .btn-border {
+        -webkit-box-ordinal-group: 4;
+            -ms-flex-order: 3;
+                order: 3
+    }
+    
+    .collection-contact .details-contact {
+        -webkit-box-ordinal-group: 5;
+            -ms-flex-order: 4;
+                order: 4;
+    }*/
+    
+    .collection-contact .details-contact .btn-border{
+        color: #BC9C29;
+        margin: 20px auto 0;
+        width: 170px
+    }
+    
+    #modal-contact form h4 span {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px
+    }
+    
+    .page-inmobiliaria .box-property .info ul li {
+        display: block
+    }
+	
+	
+    
+    /************************ PALACE - ALOJAMIENTOS ************************/
+
+    .page-alojamiento .box-habitaciones ul li a {
+        padding: 5px 10px;
+    }
+    
+    /************************ PALACE - EVENTOS ************************/
+    
+    .page-eventos .box-descubre .box-buttons .btn {
+        margin: 0px 10px 10px 0px;
+        padding: 8px 15px;
+        width: 100%;
+        display: block;
+    }
+    
+    .page-eventos .box-descubre .box-buttons .btn:last-child{
+        margin-bottom: 0
+    }
+    
+    .page-template-bodas .box-atencion.box-descubre .btn-border {
+        margin-left: 0;
+    }
+    
+    /************************ PALACE - BOUTIQUE ************************/
+    
+    .box-modal .modal-header .content {
+        padding-right: 0
+    }
+    
+    /*fondo*/
+    .page-blog .box-header {
+        top: 50px
+    }
+    
+    .page-blog {
+    background: -moz-linear-gradient(top, rgba(34,37,48,0) 0%, rgba(31,31,44,0.5) 2%, rgba(30,32,46,1) 3%, rgba(30,37,61,1) 100%);
+        background: -webkit-linear-gradient(top, rgba(34,37,48,0) 0%,rgba(31,31,44,0.5) 2%,rgba(30,32,46,1) 3%,rgba(30,37,61,1) 100%);
+        background: linear-gradient(to bottom, rgba(34,37,48,0) 0px,rgba(31,31,44,0.5) 2%,rgba(30,32,46,1) 3%,rgba(30,37,61,1) 100%);
+    } 
+    
+    /************************ COLLECTION - LANDING ************************/
+    .page-template-landing .page-inmobiliaria .box-content.box-properties {
+        padding-top: 25px
+    }
+    
+    /************************ BLOG - POST ************************/
+
+    
+    .single-blog .box-news .post-content p img {
+        width: 100%
+    }
+    
+}
+
+/* Small screens */
+@media (max-width: 320px){
+    /************************ HOME ************************/  
+    
+    .form-header .box-input img {
+        width: 15px;
+    }
+    
+    /************************ FOOTER ************************/  
+    /* Formulario susbcribirse */
+    .footer .footer-bottom .form-inline .form-control {
+        max-width: 51%;
+    }
+    
+    /************************ GOLF - CAMPOS ************************/
+    
+    .single-campo .box-details {
+        padding: 10px;
+    }
+    
+    .single-campo .box-details .text {
+        margin: 0 5px 5px;
+    }
+    
+    /************************ GOLF - MICHAEL CAMPBELL ************************/
+
+    
+    .page-campbell .box-ciencia {
+        padding-bottom: 50px
+    }
+    
+    .page-campbell .box-title h5 {
+        bottom: -22px
+    }
+    
+    .page-template-bodas .box-atencion.box-descubre .btn-border {
+        margin-top: 5px
+    }
+}

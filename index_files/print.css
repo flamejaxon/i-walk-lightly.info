@@ -1,0 +1,127 @@
+/* 
+   _  ___         
+| |/ (_) |__  ___
+| ' <| | '_ \/ _ \
+|_|\_\_|_.__/\___/
+
+KIBO STUDIOS // ADVERTISING ® 2016
+This file was originally created by Kibo.
+No public difusion allowed. Code rights reserved.
+Contact us info@kibostudios.com
+www.kibostudios.com
+
+*/
+
+/************************ PRINT VERSION ************************/
+
+@page {
+    size: auto;
+    margin: 20px;
+}
+
+@media print {
+    
+    .break {
+        page-break-inside:avoid !important;
+        page-break-after:always !important;
+    }
+
+    .images-section {
+        page-break-before:always !important;
+    }
+    
+    .box-print *,
+    .box-print {
+        min-width: 100%;
+    }
+
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    a:link:after,
+    a:visited:after {
+        display: none;
+    }    
+        
+    main {
+        padding: 60px 30px 0px;
+    }
+        
+    .header, iframe, video, .div-image, .social,
+    .box-main-share, .box-share, .box-comments, .box-related,
+    .carousel, .widget, .tab-content, .footer,
+    .saleDetail-content .box-slick, .saleDetail-content .box-header,
+    .saleDetail-content .contact, #mapLocation,
+    .saleDetail-content .shareTooltip , .box-nobottom ,.excerpt , .box-header , .print-property , .box-content{
+        display: none!important;
+    }
+
+    .print-box , .print-box *{
+        display: block!important;
+    }
+
+    .box-logo-print{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .box-logo-print img{
+        width: 50px!important;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .box-icons img{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .image , .image img{
+        width: 100%;
+        height: 200px;
+    }
+
+    .image-primary , .image-primary img{
+        height: 400px;
+        margin-bottom: 20px;
+    }
+
+    .images , .images img{
+        height: 150px!important;
+    }
+
+    .images{
+        margin-bottom: 20px;
+    }
+
+    .images-header{
+        margin-bottom: 20px;
+    }
+
+    .box-icons{
+        margin: 20px 0px;
+    }
+
+    .box-icons img{
+        width: 40px!important;
+    }
+
+    .propiedad{
+        font-size: 20px;
+    }
+
+    .referencia , .precio{
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+
+
+}

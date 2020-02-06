@@ -1,0 +1,334 @@
+/*
+ *
+ * Document Ready
+ * -------------------------------
+ *
+*/
+
+$(document).ready(function() {
+    
+    var width = $(window).width();
+    var height = $(window).height();
+
+    $('.box-loader .content').fadeIn(200);
+    setTimeout(function(){
+        $('.box-loader').fadeOut(400);
+        setTimeout(function(){
+            $('.box-loader .content').hide();
+        },400);
+    },1500);
+    
+    var ignore_onbeforeunload = false;
+    $('a, button').on('click',function(){
+        if ($(this).is('a[href^=mailto]') || $(this).is('a[href^=tel]')) {
+            ignore_onbeforeunload = true;
+        } else {
+            ignore_onbeforeunload = false;
+        }
+        
+    });
+    
+    if (width > 767) {
+        window.onbeforeunload = function() {
+            if (!ignore_onbeforeunload){
+                $('.box-loader .loading').hide();
+                $('.box-loader').fadeIn(200);
+            }
+        }
+    }
+    
+    
+    /*********** menu toggle ***********/ 
+    
+    $('.menu-toggle').click(function(){
+		//$(this).toggleClass('open');
+        $('body').toggleClass('open-menu');
+	});
+
+
+    
+    /*********** dropdown with hover ***********/ 
+    
+    $('.dropdown-toggle').mouseover(function() {
+        $(this).next().show();
+        $(this).next().addClass('active');
+    });
+
+    $('.dropdown-toggle').mouseout(function() {
+        $(this).next().hide();
+        $(this).next().removeClass('active');
+        $('.dropdown-menu').on('mouseenter', function(item) {
+            $(this).show();
+            $(this).addClass('active');
+        }).on('mouseleave', function() {
+            $(this).hide();
+            $(this).removeClass('active');
+        })
+    });
+    
+    /*********** cookies ***********/
+    
+    window.storage = {
+        store:localStorage,
+        get: function( key ) {
+            try {
+                return this.store[key];
+            } catch(e) {};
+            return undefined;
+        },
+        set: function( key, value) {
+            try {
+                this.store[key] = value;
+            } catch(e) {};
+        }
+    };
+
+    var cookies_state = storage.get('vp_cookies');
+
+    if (typeof cookies_state == "undefined") {
+        if (width > 1199 && $('.menu-inner').size() > 0) {
+            //$('.box-cookies').css('top', '32px');
+        }
+        $('.box-cookies').show();
+    }
+
+    $(".cerrar-cookies").on('click',function() {
+        storage.set('vp_cookies', 'yes');
+        $('.box-cookies').css('top', '-' + $('.box-cookies').height() + 'px');
+    }); 
+    
+    
+    if($('body').hasClass('single-post') || $('body').hasClass('page-template-blog')) {
+        if (typeof cookies_state == "undefined") {
+            if (width > 767 && $('.menu-inner').size() > 0) {
+                var estilo = {
+                  top : '0',
+                  zIndex: '10' 
+                };
+                $('.box-cookies').css(estilo);
+            }
+            $('.box-cookies').show();
+        }
+        
+        $(".cerrar-cookies").on('click',function() {
+            storage.set('vp_cookies', 'yes');
+            
+            var estilo_cerrar = {
+              top : '0',
+              opacity: '0' 
+            };
+            
+            $('.box-cookies').css(estilo_cerrar);
+            console.log('close_blog');
+        }); 
+    }
+    
+    
+    /************** scroll down **************/
+    
+    $('.scroll').on('click', function(e){ 
+
+        e.preventDefault();
+        var id = $(this).attr('href');
+        var speed = 1500;
+        var diff = 0;
+        
+        if(!isNaN($(this).data('speed')) && parseInt($(this).data('speed')) > 0) {
+            speed = parseInt($(this).data('speed'));
+        }
+        
+        if ($('.menu-inner').size() > 0) {
+            diff = 30;
+        }
+        
+        $('html, body').stop().animate({
+            scrollTop: $(id).offset().top - diff
+        }, speed);
+
+    });
+    
+    /******** VALIDATE FORMS ********/
+    
+    var formSent = false;
+
+    $('form.form-validate input[type=submit], form.form-validate button[type=submit]').on('click', function(e){
+        
+        e.preventDefault();
+        var form = $(this).parents('form');
+        var inputs = $(form).find('.form-control.required');
+        var button = $(this);
+        
+        if (!formSent) {
+            
+            $('.has-error').removeClass('has-error');
+            var	validate_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/; 
+            var error = false;
+            var error_msg = '';
+
+            $(inputs).each(function(){
+                if (!error) {
+
+                    if ($(this).hasClass('number')) {
+                        if ($(this).val() == '' || isNaN($(this).val())) {
+                            error = true;
+                            error_msg = 'número no válido';
+                        }
+                    } else if ($(this).hasClass('email')) {
+                        if ($(this).val() == '' || !validate_email.test($(this).val())) {
+                            error = true;
+                            error_msg = 'email no válido';
+                        }
+                    } else if ($(this).hasClass('check')) {
+                        if (!$(this).is(':checked')) {
+                            error = true;
+                            error_msg = 'debe aceptar este campo';
+                        }
+                    } else {
+                        if ($(this).val() == '') {
+                            error = true;
+                            error_msg = 'campo requerido';
+                        }
+                    }
+                    
+                    if (error) {
+                        $(this).focus();
+                        $(this).parent().addClass('has-error');
+                        console.log($(this).attr('name') + ' - ' + error_msg);
+                    }
+
+                }
+            });
+
+            if (!error) {
+
+                formSent = true;
+                $('.has-error').removeClass('has-error');
+                $(button).addClass('sending');
+                $(form).append('<input class="hidden" type="text" name="sitio" value="' + TEMPLATE.sitio + '">');
+                $(form).append('<input class="hidden" type="text" name="seccion" value="' +document.title+ '">');
+                $(form).append('<input class="hidden" type="text" name="temp" value="' + TEMPLATE.temp + '">');
+                
+                if ($('.single-curas, .single-tratamientos').size() > 0) {
+                    $(form).append('<input class="hidden" type="text" name="curas" value="curas">');
+                }
+                
+                if ($('.single-restaurantes').size() > 0) {
+                    $(form).append('<input class="hidden" type="text" name="restaurantes" value="restaurantes">');
+                }
+                
+                
+                
+                
+                var dataUrl = TEMPLATE.uri + '/mail.php';
+                if ($('.page-calendario').size() > 0) {
+                    dataUrl = TEMPLATE.uri + '/mail-eventos.php';
+                }
+                
+                if ($(form).find('input[type=file]').length > 0) {
+                    
+                    var data = new FormData();
+                    var array = $(form).serializeArray();
+                    
+                    $(array).each(function(){
+                        data.append(this.name, this.value);
+                    });
+                    
+                    $(form).find('input[type=file]').each(function(){
+                        data.append(this.name, this.files[0]);
+                    });
+                    
+                    data.append('uri', TEMPLATE.uri);
+                                        
+                    $.ajax({
+                        type: "POST",
+                        url: dataUrl,
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        success: function() { successAjax(); },
+                        error: function(e) { errorAjax(e); }
+                    });
+                    
+                } else {
+                    
+                    var dataForm = $(form).serialize();
+                    dataForm += '&uri=' + TEMPLATE.uri;
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: dataUrl,
+                        data: dataForm,
+                        success: function(e) { 
+                            if ($('body').hasClass('page-template-templates-golfcalendario-php')) {
+                                successAjaxCalendarioGolf();
+                            }else{
+                                successAjax();
+                            }
+                        },
+                        error: function(e) { errorAjax(e); }
+                    });
+                    
+                }
+
+            }
+            
+        }
+        
+        function successAjax() {
+            $(button).addClass('sent');
+            $(button).find('.text').html('enviado');
+            
+            if(TEMPLATE.uriThanks != 'null'){
+                setTimeout(function(){
+                window.location.href = TEMPLATE.uriThanks;
+            },500)
+            }
+           // console.log(TEMPLATE.sitio);           
+           // console.log(TEMPLATE.uriThanks);
+        }
+        
+        function successAjaxCalendarioGolf() {
+            $(button).addClass('sent');
+            $(button).find('.text').html('enviado');
+            
+            if(TEMPLATE.uriThanksCalendarioGolf != 'null'){
+                setTimeout(function(){
+                window.location.href = TEMPLATE.uriThanksCalendarioGolf;
+            },500)
+            }
+           // console.log(TEMPLATE.sitio);           
+           // console.log(TEMPLATE.uriThanksCalendarioGolf);
+        }
+
+        function errorAjax(error) {
+            $(button).addClass('error');
+        }
+
+    });
+
+    /******** INPUT FILE ********/
+    
+    $( '.inputfile' ).each( function(){
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e ){
+			var fileName = '';
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+			if( fileName )
+				$label.find( 'span' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+
+});

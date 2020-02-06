@@ -1,0 +1,46 @@
+/* 
+   _  ___         
+| |/ (_) |__  ___
+| ' <| | '_ \/ _ \
+|_|\_\_|_.__/\___/
+
+KIBO STUDIOS // ADVERTISING ® 2016
+This file was originally created by Kibo.
+No public difusion allowed. Code rights reserved.
+Contact us info@kibostudios.com
+www.kibostudios.com
+
+
+/************************ DASHBOARD EDITOR ************************/
+
+.mce-menu .mce-menu-item-normal.mce-active,
+.mce-menu .mce-menu-item-preview.mce-active,
+.mce-menu .mce-menu-item.mce-selected,
+.mce-menu .mce-menu-item:focus,
+.mce-menu .mce-menu-item:hover {
+    background: #fff !important;
+}
+
+.mce-text {
+    -webkit-font-smoothing: antialiased !important;
+}
+
+
+/************************ CUSTOM EDITOR STYLES ************************/
+
+.content-titulo {
+    color: #BC9C29;
+    font-family: 'avenir';
+    font-weight: 700;
+    font-size: 14px;   
+    letter-spacing: 0.3px;
+    line-height: 20px; 
+    text-transform: uppercase;
+}
+
+.content-cita {
+    color: #BC9C29;
+    font-family: 'palatino';
+    font-weight: bold;
+    font-style: italic;  
+}

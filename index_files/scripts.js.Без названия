@@ -1,0 +1,1392 @@
+$(document).ready(function() {
+    
+    /* BUTTON RIGHT DISABLED */
+//    $(function(){
+//        $(document).bind("contextmenu",function(e){
+//            alert("Las imágenes del sitio web tienen copyright. Todos los derechos reservados.");
+//            return false;            
+//        });
+//    });
+    
+    //CORRECCIÓN DE ATRIBUTOS "ALT" FALTANTES
+    // $('img').each(function(){
+    //     if ($(this).attr('alt') == "" || $(this).attr('alt') == undefined) {
+    //         //establecemos el atributo alt como la última parte de su URL
+    //         var parts = $(this).attr('src').split('/');
+    //         var lastSegment = parts.pop() || parts.pop();  // handle potential trailing slash
+    //         
+    //         //eliminamos la extensión en caso de tenerla
+    //         lastSegment = lastSegment.replace(/\.[^/.]+$/, "");
+    //         
+    //         $(this).attr('alt', lastSegment + '-img');
+    //         //console.log("the alt " + lastSegment + '-img was just added');
+    //     }
+    // });
+
+    $(".mc4wp-form-fields button.btn").click(function(e){
+        if ($(".new-check .check-conditions").prop('checked')){
+            $(".mc4wp-form-fields button.btn").trigger("click");
+        }else{
+            e.preventDefault();
+            $(".new-check .check-conditions").addClass("has-error");
+        }
+    });
+    
+    var site = 0;
+    
+    if ( $('body').hasClass('page-template-templates-vp') ){
+        site = 0;
+        $( "select" ).change(function () {
+            var form = $(this).closest('form')[0];
+
+            $( "select option:selected" ).each(function() {
+                site = $(this).val();
+            });
+
+            console.log(site);
+            console.log(form.id);
+
+            $('#'+form.id+' input[name=site]').val(site);
+            urlBooking(site, form.id);       
+            
+        });
+        
+        $('.daterangepicker').on('apply.daterangepicker', function(ev, picker) {
+            var form = $(this).closest('form')[0];
+  
+            $( "select option:selected" ).each(function() {
+                site = $(this).val();
+            });
+  
+            $('#'+form.id+' input[name=site]').val(site);
+            urlBooking(site, form.id);
+        });   
+    }else{
+        if ( $('.urlBooking').size() > 0 ){
+            var form = $('.urlBooking').closest('form')[0];
+            site = $('#'+form.id+' input[name=site]').val();
+        
+            // console.log(site);
+            // console.log(form.id);
+            
+            urlBooking(site, form.id);       
+            
+            
+            $( "form.form-inline.new-booking input" ).on('keyup', function () { 
+                
+                // console.log('entra');                
+                // console.log(site);
+                // console.log(form.id);           
+    
+                $( "select option:selected" ).each(function() {
+                    site = $(this).val();
+                });
+    
+                $('#'+form.id+' input[name=site]').val(site);
+                
+                // var dataForm = $('#'+form.id).serialize();
+                // dataForm += '&site=' + site;
+                // console.log(dataForm);
+                
+                urlBooking(site, form.id);       
+                
+            });
+            
+            $('.daterangepicker').on('apply.daterangepicker', function(ev, picker) {
+                $( "select option:selected" ).each(function() {
+                    site = $(this).val();
+                });
+    
+                $('#'+form.id+' input[name=site]').val(site);
+                urlBooking(site, form.id);    
+            }); 
+        } 
+        
+    }     
+                                         
+    
+    function urlBooking(site, idForm){
+        
+        $('.urlBooking').css('opacity','0');
+        $('.urlBooking').css('cursor','not-allowed');
+        
+        
+        var dataForm = $('#'+idForm).serialize();
+        // console.log('1');    
+        // console.log(dataForm);    
+        
+        dataForm += '&site=' + site;
+        
+        // console.log('2');    
+        // console.log(dataForm);
+        // 
+        // console.log(dataForm);
+        
+        $.ajax({
+            type: "POST",
+            url: TEMPLATE.uri+"/templates-vp/iframe_home.php",
+            data: dataForm,
+            success: function( data ){
+                // console.log(data);
+                
+                // setTimeout(function(){
+                    $('.urlBooking').css('opacity','1');
+                    $('.urlBooking').css('cursor','default');
+                    $('.urlBooking').attr("href", data);                
+                    $('.urlBooking').attr("target", "_blank");                              
+                // },1000);
+                      
+                                      
+                
+                // $('#formsite').attr("action", data);
+                // $('#formsite').submit();                                        
+            },
+            error: function( data ){
+                console.log("Error URL Booking");
+            }
+        });
+    }
+
+    //AÑADIMOS META EN CASO DE NO EXISTIR
+    if (!$('meta[property="og:description"]').length) {
+        var info = $('title').html();
+        $('head').append('<meta property="description" content="' + info + '">');
+    }
+
+    // IMPRIMIR LA PÁGINA EN PROPIEDADES
+    $('.print-property').click(function() {
+        //console.log('print page');
+        window.print();
+    });
+
+    // CAMBIO IDIOMA BOTON SUSBCRIBE SHORTCODE MAILCHIMP
+
+    var gets = getUrlVars();
+
+    if ($('html').attr('lang') == 'es-ES' && !('lang' in gets)) {
+        $('.mc4wp-form-fields .btn-solid').html('Suscríbete');
+    } else if ($('html').attr('lang') == 'en-US' && !('lang' in gets)) {
+        $('.mc4wp-form-fields .btn-solid').html('Subscribe');
+    } else if ($('html').attr('lang') == 'fr-FR' || ('lang' in gets && gets['lang'] == 'fr')) {
+        $('.mc4wp-form-fields .btn-solid').html("s'abonner");
+    } else if ($('html').attr('lang') == 'de-DE' || ('lang' in gets && gets['lang'] == 'de')) {
+        $('.mc4wp-form-fields .btn-solid').html('zeichnen');
+    } else if ($('html').attr('lang') == 'ru-RU' || ('lang' in gets && gets['lang'] == 'ru')) {
+        $('.mc4wp-form-fields .btn-solid').html('ПОДПИСАТЬСЯ');
+    }
+
+    var width = $(window).width();
+    var height = $(window).height();
+
+    $('a.no-event').on('click', function(e) {
+        e.preventDefault();
+    });
+
+    /********* Eliminar parrafos vacios *********/
+
+    $('.content p').each(function() {
+        var $this = $(this);
+        if ($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+            $this.remove();
+    });
+
+    /********* incrementar scroll en anclas *********/
+
+    if (width < 1200) {
+        if (document.location.hash) {
+            setTimeout(function() {
+                window.scrollTo(window.scrollX, window.scrollY - 66);
+            }, 10);
+        }
+    };
+
+    /********* Eliminar controles carousel cuando venga solo un item *********/
+
+    $('.carousel-inner').each(function() {
+        var total = $(this).find('.item').length;
+        //console.log(total);
+        if (total < 2) {
+            $(this).parent('.carousel').find('.controls').hide();
+            $(this).parent('.carousel').find('.right.carousel-control').hide();
+
+            $('.box-header .box-offers .carousel .controls').show();
+        }
+    });
+
+    $(window).resize(function() {
+        $('.carousel-inner').each(function() {
+            var total = $(this).find('.item').length;
+            //console.log(total);
+            if (total < 2) {
+                $(this).parent('.carousel').find('.controls').hide();
+                $('.box-header .box-offers .carousel .controls').show();
+            }
+        });
+    });
+
+    /********* Slider dobles para movil *********/
+
+    if (width > 767) {
+        $('.slider-movil').remove();
+
+    } else {
+        $('.slider-web').remove();
+    }
+
+    $(window).resize(function() {
+        var width = $(window).width();
+
+        if (width > 767) {
+            $('.slider-movil').remove();
+
+        } else {
+            $('.slider-web').remove();
+        }
+    });
+
+
+    /********* home header height *********/
+
+    if (width > 1199) {
+        if ($('.page-template-templates-vpcontacto-php').size() == 0) {
+            $('main').css('padding-top', $('.menu-inner').innerHeight());
+        }
+
+        $('main').css('min-height', height - $('.footer').innerHeight());
+    }
+
+    /*if (width < 1199) {
+        $('main').css('padding-top', $('.main-header').innerHeight());
+        
+        $(window).resize(function(){
+            height = $(window).height();
+            $('main').css('padding-top', $('.main-header').innerHeight());
+        });
+    }*/
+
+    if ($('.page-contact .box-map #map').size() > 0) {
+        $('.page-contact .box-map').css('min-height', height - $('.footer').innerHeight());
+    }
+
+    $(window).resize(function() {
+        height = $(window).height();
+        $('main').css('min-height', height - $('.footer').innerHeight());
+        if ($('.page-contact .box-map #map').size() > 0) {
+            $('.page-contact .box-map').css('min-height', height - $('.footer').innerHeight());
+        }
+    });
+
+    if ($('.home-content').size() > 0) {
+        if ($('.menu-inner, .page-landing').size() > 0 && $('.form-header').size() > 0) {
+            $('.home-content .box-header').css('min-height', height - $('.menu-inner').innerHeight() - 39);
+        } else if ($('.menu-inner').size() == 0 && $('.form-header').size() > 0) {
+            $('.home-content .box-header').css('min-height', height - 39);
+        } else {
+            $('.home-content .box-header').css('min-height', height - $('.menu-inner').innerHeight());
+        }
+        $(window).resize(function() {
+            height = $(window).height();
+            if ($('.menu-inner, .page-landing').size() > 0 && $('.form-header').size() > 0) {
+                $('.home-content .box-header').css('min-height', height - $('.menu-inner').innerHeight() - 39);
+            } else if ($('.menu-inner').size() == 0 && $('.form-header').size() > 0) {
+                $('.home-content .box-header').css('min-height', height - 39);
+            } else {
+                $('.home-content .box-header').css('min-height', height - $('.menu-inner').innerHeight());
+            }
+        });
+    }
+
+    if (width <= 767) {
+        $('.box-header').css('height', height - 100);
+
+        $(window).resize(function() {
+            height = $(window).height();
+            //$('.box-header').css('min-height', height - 75);
+        });
+        //console.log(height);
+    }
+    
+    if (width <= 320) {
+        $('.box-header').css('height', height - 150);
+
+        $(window).resize(function() {
+            height = $(window).height();
+            //$('.box-header').css('min-height', height - 75);
+        });
+        //console.log(height);
+    }
+    
+    
+
+
+    /*********** dropdown lang with hover ***********/
+
+    $('.box-lang .action').mouseover(function() {
+        $('.wrapper-header').addClass('open-lang');
+        $('.overlay-menu').show();
+    });
+
+    $('.box-lang .action').mouseout(function() {
+        $('.wrapper-header').removeClass('open-lang');
+        $('.overlay-menu').hide();
+        $('.wrapper-header .lang-list').on('mouseenter', function(item) {
+            $('.wrapper-header').addClass('open-lang');
+            $('.overlay-menu').show();
+        }).on('mouseleave', function() {
+            $('.wrapper-header').removeClass('open-lang');
+            $('.overlay-menu').hide();
+        })
+    });
+
+    $('.overlay-menu').on('click', function() {
+        $('.wrapper-header').removeClass('open-lang');
+        $('.overlay-menu').hide();
+    });
+
+    $('.box-lang .action').on('click', function() {
+        $('.wrapper-header').toggleClass('open-lang');
+        if ($('.overlay-menu').is(':visible')) {
+            $('.overlay-menu').hide();
+        } else {
+            $('.overlay-menu').show();
+        }
+    });
+
+
+    /********* scroll menu inner ********/
+
+    if ($('.page-iframe').size() == 0) {
+
+        var auxScroll = $(window).scrollTop();
+
+        if ($(window).scrollTop() > 0) {
+            if (!$('.header').hasClass('scroll')) {
+                $('.header').addClass('scroll');
+            }
+        } else {
+            $('.header').removeClass('scroll');
+        }
+
+        if (width > 767) {
+            $(window).scroll(function() {
+
+                if ($(window).scrollTop() > 0) {
+                    if (!$('.header').hasClass('scroll')) {
+                        $('.header').addClass('scroll');
+                    }
+                } else {
+                    $('.header').removeClass('scroll');
+                }
+
+                if ($(window).scrollTop() > auxScroll) {
+                    if (!$('.header').hasClass('down')) {
+                        $('.header').addClass('down');
+                    }
+                } else {
+                    $('.header').removeClass('down');
+                }
+                auxScroll = $(window).scrollTop();
+
+            });
+        }
+
+    }
+
+    /********** Toggle arrow footer **********/
+    var width = $(window).width();
+
+    if (width < 767) {
+        $('.footer .dropdown').on('click', function() {
+            $(this).find('.caret').addClass('rotate');
+        });
+        $('.footer .dropdown').on('click', function(event) {
+            $(this).addClass('open');
+            event.stopPropagation();
+        });
+    }
+
+    $('.single-restaurantes .box-descubre .sub-content h4').on('click', function() {
+        $(this).find('.caret').toggleClass('rotate');
+    });
+
+    /********* dropdown menu-inner position *********/
+
+    if ($('.menu-inner .dropdown').size() > 0) {
+        var top = '-100%';
+        $('.menu-inner .dropdown ul').each(function() {
+            top = '-' + ($(this).find('li').size() * 23 + 50) + 'px';
+            $(this).css('top', top);
+        });
+    }
+
+
+    /********* modal video *********/
+
+    $('.view-video').on('click', function() {
+        // desactivado a petición del cliente (06-07-2017)
+        // activado a petición del cliente (08-08-2017)
+
+        $('#modal-video').fadeIn('1500');
+        $('#modal-video video')[0].play();
+    });
+
+    $('#modal-video .cerrar').on('click', function() {
+        $('#modal-video').fadeOut('500');
+        $('#modal-video video')[0].pause();
+    });
+
+
+    /********* show hide offers header home *********/
+
+    $('.close-offers').on('click', function(e) {
+        e.preventDefault();
+        $('.box-offers').toggleClass('show');
+    });
+
+    if (width < 991) {
+
+        $(document).ready(function() {
+            $('.box-offers').removeClass('show');
+        })
+    }
+
+
+    /********* open offer modal ********/
+
+    $('.open-modal').on('click', function(e) {
+
+        e.preventDefault();
+
+        var modal = $(this).data('modal');
+        var format = '';
+
+        if (modal == '#modal-contact') {
+            var estate = $(this).next().text() + ' ' + $(this).next().next().text();
+            $(modal).find('form h4 span').text(estate);
+            $(modal).find('#estates').attr('value', estate);
+        }
+
+        if (modal == '#modal-contact') {
+            if ($(this).hasClass('botton-presentaciones')) {
+                $('#modal-contact form').append('<input class="hidden" id="presentaciones" type="text" name="presentaciones" value="presentaciones">');
+
+                $('#modal-contact .close').click(function() {
+                    $('#presentaciones').remove()
+                });
+            }
+
+        }
+
+        if (modal == '#modal-contact') {
+            if ($(this).hasClass('racquet-pista')) {
+                $('#modal-contact form').append('<input class="hidden" type="text" id="pista" name="pista" value="Reserva de pista">');
+
+                $('#modal-contact .close').click(function() {
+                    $('#pista').remove()
+                });
+            }
+        }
+
+        $('body').addClass('overflow');
+        $(modal).find('.modal-overlay .content').show();
+        $(modal).addClass('show');
+        setTimeout(function() {
+            $(modal).css('opacity', 1);
+        }, 100);
+
+        if ($(this).data('modal') == '#modal') {
+
+            var data = {
+                offer: $(this).data('offer')
+            };
+
+            $.post(TEMPLATE.uri + "/get-offer.php", data, function(response) {
+                var res = JSON.parse(response);
+                $('#modal .box-modal .modal-header .image').attr('src', res.image);
+                if (res.discount != "")
+                    $('#modal .box-modal .modal-header .discount span').html(res.discount + "%");
+                else
+                    $('#modal .box-modal .modal-header .discount').hide();
+                $('#modal .box-modal .modal-header .content h4').html(res.title);
+                $('#modal .box-modal .modal-header .content p').html(res.short);
+                $('#modal .box-modal .modal-content .div-content').html(res.content);
+                $('#modal .box-modal .modal-content .small').html(res.legal);
+                if (typeof res.phone === Object || Array) {
+                    $.each(res.phone, function() {
+                        if (this.telefono != '') {
+                            format = this.telefono
+                            format = format.replace(/ /g, '');
+                            format = format.replace('+', '');
+                            $('#modal .modal-footer .phone .list').append('<a href="tel:' + format + '" class="linktel">' + this.telefono + '</a>');
+                        }
+                    });
+                } else {
+                    format = res.phone;
+                    format = format.replace(/ /g, '');
+                    format = format.replace('+', '');
+                    $('#modal .modal-footer .phone .list').append('<a href="tel:' + format + '" class="linktel">' + res.phone + '</a>');
+                }
+                $('#modal .box-modal .modal-footer .email').attr('href', 'mailto:' + res.email);
+                $('#modal .box-modal .modal-footer .email span').text(res.email);
+//                if (res.reserve != '') {
+//                    $('#modal .box-modal .modal-content .btn-link').attr('href', res.reserve);
+//                    $('#modal .box-modal .modal-content .open-modal').hide();
+//                    $('#modal .box-modal .modal-content .btn-link').show();
+//                } else {
+//                    $('#modal .box-modal .modal-content .btn-link').hide();
+//                    $('#modal .box-modal .modal-content .open-modal').show();
+//                }
+                if (res.type_reserve == 'no') {
+                    $('#modal .box-modal .modal-content .open-modal').hide();
+                    $('#modal .box-modal .modal-content .btn-link.book').hide();
+                    $('#modal .box-modal .modal-content .btn-link.custom').hide();
+                } else if (res.type_reserve == 'info') {
+                    $('#modal .box-modal .modal-content .open-modal').show();
+                    $('#modal .box-modal .modal-content .btn-link.book').hide();
+                    $('#modal .box-modal .modal-content .btn-link.custom').hide();
+                }else if (res.type_reserve == 'reserva') {
+                    $('#modal .box-modal .modal-content .open-modal').hide();
+                    $('#modal .box-modal .modal-content .btn-link.book').attr('href', res.reserve);
+                    $('#modal .box-modal .modal-content .btn-link.custom').hide();
+                }else if (res.type_reserve == 'custom') {
+                    $('#modal .box-modal .modal-content .open-modal').hide();
+                    $('#modal .box-modal .modal-content .btn-link.book').hide();
+                    $('#modal .box-modal .modal-content .btn-link.custom').attr('href', res.url_link);
+                    $('#modal .box-modal .modal-content .btn-link.custom').text(res.text_link);
+                }else{
+                    $('#modal .box-modal .modal-content .open-modal').show();
+                    $('#modal .box-modal .modal-content .btn-link.book').hide();
+                    $('#modal .box-modal .modal-content .btn-link.custom').hide();
+                }
+                setTimeout(function() {
+                    $(modal).find('.modal-overlay .content').hide();
+                    $(modal).find('.box-modal').css('opacity', 1);
+                }, 1000);
+            });
+
+        } else if ($(this).data('modal') == '#modal-tour') {
+
+            var data = {
+                key: $(this).data('key'),
+                id: $(this).data('id')
+            };
+
+            $.post(TEMPLATE.uri + "/get-tour.php", data, function(response) {
+                var res = JSON.parse(response);
+                $('.modal .box-modal .modal-content .carousel-inner').html(res.gallery);
+                $('.modal .box-modal .modal-content .content img').attr('src', res.logo);
+                $('.modal .box-modal .modal-content .content h4').text(res.subtitle);
+                $('.modal .box-modal .modal-content .content h3').text(res.title);
+                $('.modal .box-modal .modal-content .content .text').html(res.content);
+                setTimeout(function() {
+                    $(modal).find('.modal-overlay .content').hide();
+                    $(modal).find('.box-modal').css('opacity', 1);
+                }, 500);
+            });
+
+        } else {
+
+            $(modal).find('.modal-overlay .content').hide();
+            $(modal).find('.box-modal').css('opacity', 1);
+
+        }
+
+
+    });
+
+    $('.modal .modal-content').css('max-height', height / 1.5);
+
+    if (width < 767) {
+        $('#modal-tour .modal-content').css('max-height', height - 50);
+    }
+
+    $(window).resize(function() {
+        height = $(window).height();
+        $('.modal .modal-content').css('max-height', height / 1.5);
+
+        if (width < 767) {
+            $('#modal-tour .modal-content').css('max-height', height - 50);
+        }
+    });
+
+    $('.modal .close, .modal .modal-overlay').on('click', function() {
+        $('.modal, .modal .box-modal').css('opacity', 0);
+        $('body').removeClass('overflow');
+        setTimeout(function() {
+            $('.modal').removeClass('show');
+            $('#modal .modal-footer .phone .list').empty();
+        }, 500);
+    });
+
+
+    /********* data pickers *********/
+    
+//    console.log($('html').attr('lang'));
+    
+    if ( ($('html').attr('lang') == 'en-US') || ($('body').hasClass('page-template-landing') ) ) {
+
+        $('.daterangepicker').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Close',
+                applyLabel: 'Apply',
+                "daysOfWeek": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                "firstDay": 0
+            }
+        });
+
+    }else{
+        $('.daterangepicker').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Cerrar',
+                applyLabel: 'Aplicar',
+                "daysOfWeek": ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+                "monthNames": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+                "firstDay": 1
+            }
+        });    
+    }
+
+
+
+    $('#start, #end').on('click', function() {
+
+        setTimeout(function() {
+            var position = $('.daterangepicker.dropdown-menu').offset().top + $('.daterangepicker.dropdown-menu').outerHeight() - 30;
+            if ($(window).scrollTop() + height < position) {
+                $('html, body').stop().animate({
+                    scrollTop: position - height
+                }, 800);
+            }
+        }, 50);
+        // console.log('entra');
+    });
+    
+    $('.ranges').on('click', function() {
+        setTimeout(function() {
+            var topPosition = $('#formsite').offset().top - 100;        
+            $('html, body').stop().animate({
+                scrollTop: topPosition 
+            }, 800);
+        }, 50);
+        // console.log('NO entra');
+    });
+
+
+    /********* width slider instalaciones vp palace *********/
+
+    if ($('.slider-position').size() > 0) {
+
+        var widthSlider = width - $('.slider-position').offset().left;
+        $('.home-palace .box-instalaciones .box-slider').width(widthSlider);
+        $(window).resize(function() {
+            width = $(window).width();
+            widthSlider = width - $('.slider-position').offset().left;
+            $('.home-palace .box-instalaciones .box-slider').width(widthSlider);
+        });
+
+    }
+
+
+    /********* width slider instalaciones vp palace *********/
+
+    $('a[data-toggle=collapse]').on('click', function() {
+        $('.panel-heading, .box-slider .carousel').removeClass('active');
+        if (!$(this).hasClass('collapsed')) {
+            $(this).parent().parent().removeClass('active');
+        } else {
+            $(this).parent().parent().addClass('active');
+            $('.box-slider .carousel:nth-child(' + parseInt($(this).parent().parent().parent().index() + 1) + ')').addClass('active');
+        }
+    });
+
+
+    /********* slider wellness profesionales *********/
+
+    $('.box-team .link-content').on('click', function(e) {
+        e.preventDefault();
+        sliderTeam($(this));
+    }).hover(function() {
+        sliderTeam($(this));
+    });
+
+    function sliderTeam(x) {
+        var index = $(x).data('team');
+        $('.box-team .slide-images .image').removeClass('active');
+        $('.box-team .box-text .slide').removeClass('active');
+        $('.slide-images .image:nth-child(' + index + ')').addClass('active');
+        $('.box-team .box-text .slide:nth-child(' + index + ')').addClass('active');
+    }
+
+    /********* slider wellness profesionales movil *********/
+    var interval = undefined;
+    $(document).ready(function() {
+        interval = setInterval(getNext, 500);
+        $('#next').on('click', getNext);
+        $('#prev').on('click', getPrev);
+    });
+
+    function getNext() {
+        var $curr_img = $('.page-profesionales .box-team .slide-images .image.active'),
+            $next_img = ($curr_img.next().length) ? $curr_img.next() : $('.page-profesionales .box-team .slide-images .image').first();
+        var $curr_txt = $('.page-profesionales .box-team .box-text .slide.active'),
+            $next_txt = ($curr_txt.next().length) ? $curr_txt.next() : $('.page-profesionales .box-team .box-text .slide').first();
+
+        transition($curr_img, $next_img, $curr_txt, $next_txt);
+    }
+
+    function getPrev() {
+        var $curr_img = $('.page-profesionales .box-team .slide-images .image.active'),
+            $next_img = ($curr_img.prev().length) ? $curr_img.prev() : $('.page-profesionales .box-team .slide-images .image').last();
+        var $curr_txt = $('.page-profesionales .box-team .box-text .slide.active'),
+            $next_txt = ($curr_txt.prev().length) ? $curr_txt.prev() : $('.page-profesionales .box-team .box-text .slide').last();
+
+        transition($curr_img, $next_img, $curr_txt, $next_txt);
+    }
+
+    function transition($curr_img, $next_img, $curr_txt, $next_txt) {
+        clearInterval(interval);
+
+        $next_img.addClass('active').fadeIn('slow', function() {
+            $curr_img.removeClass('active');
+            $next_img.addClass('active');
+        });
+
+        $next_txt.addClass('active').fadeIn('slow', function() {
+            $curr_txt.removeClass('active');
+            $next_txt.addClass('active');
+        });
+    }
+
+    /********* Flechas menu responsive *********/
+
+    //    if(width <= 1199) {
+    //        $('.navbar-default .primary').click(function(){
+    //            $('.navbar-default li').removeClass('active');
+    //            $(this).addClass('no-event').removeAttr('href').css('cursor', 'pointer');
+    //            $(this).find('.caret').toggleClass('rotate');
+    //        });
+    //        
+    //        $('.navbar-default li').click(function(){
+    //            $('.caret').removeClass('rotate');
+    //            $('.menu-inner').removeClass('activo');
+    //            $(this).toggleClass('active');
+    //            $(this).find('.menu-inner').toggleClass('activo');
+    //        });
+    //        
+    //        $(window).resize(function(){
+    //            width = $(window).width();
+    //            
+    //        });
+    //    }
+
+
+    /********* slider collection residences *********/
+
+    if ($('.box-experience .point-list').size() > 0) {
+
+        var count = 1;
+        var interval;
+
+        setIntervalCount();
+
+        function setIntervalCount() {
+            interval = setInterval(function() {
+                $('.point-list li:nth-child(' + ((count % 4) + 1) + ')').trigger('click');
+                count++;
+            }, 3000);
+        }
+
+        $('.point-list li, .box-slide a').on('click', function() {
+            setActiveSlide($(this));
+        }).mouseover(function() {
+            clearInterval(interval);
+            setActiveSlide($(this), true);
+        }).mouseout(function() {
+            setIntervalCount();
+        });
+
+        function setActiveSlide(element, action) {
+
+            var index = 0;
+            if ($(element).is('li')) {
+                index = $(element).index();
+            } else {
+                index = $(element).parent().index();
+            }
+
+            $('.point-list li').removeClass('active');
+            $('.box-slide a').removeClass('active');
+            $('.point-list li:nth-child(' + (index + 1) + ')').addClass('active');
+            $('.box-slide > div:nth-child(' + (index + 1) + ') a').addClass('active');
+
+            if (action) {
+                count = index + 1;
+            };
+
+        }
+
+    }
+
+
+    /********* option list form properties *********/
+
+    if ($('.form-bottom').size() > 0) {
+
+        $('.form-bottom .option-select span').each(function() {
+            $(this).text($(this).parent().next().find('.active').text());
+        });
+
+        $('.form-bottom .option-select').on('click', function() {
+            appear($(this).next());
+        });
+
+        $('.form-bottom .option-list li').on('click', function() {
+            $(this).parent().find('li').removeClass('active');
+            $(this).addClass('active');
+            appear($(this).parent());
+            $(this).parent().prev().find('span').text($(this).text());
+            if ($(this).parents('.filter-features').size() > 0) {
+                $(this).parent().prev().prev().attr('value', $(this).index() + 1);
+            } else {
+                $(this).parent().prev().prev().attr('value', $(this).text());
+            }
+            setTimeout(function() {
+                $('.form-header form').submit();
+            }, 300);
+        });
+
+        function appear(element) {
+            if (!$(element).hasClass('active')) {
+                $(element).addClass('active');
+                setTimeout(function() {
+                    $(element).addClass('show');
+                }, 100);
+            } else {
+                $(element).removeClass('show');
+                setTimeout(function() {
+                    $(element).removeClass('active');
+                }, 300);
+            }
+        }
+
+    }
+
+
+    /********* slick single inmobiliaria *********/
+
+    if ($('.single-inmobiliaria').size() > 0) {
+
+        $('.single-inmobiliaria .box-slick').slick({
+            centerMode: true,
+            centerPadding: '25%',
+            draggable: false,
+            slidesToShow: 1,
+            responsive: [{
+                    breakpoint: 992,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '65px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: true,
+                        centerMode: false,
+                        centerPadding: '0px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+        $('.slick-arrow').on('click', function() {
+            var arrows = $(this).parent().find('.slick-arrow');
+            $(arrows)
+                .css('-webkit-transition', 'none')
+                .css('-moz-transition', 'none')
+                .css('-ms-transition', 'none')
+                .css('transition', 'none')
+                .css('opacity', 0);
+            setTimeout(function() {
+                $(arrows)
+                    .css('-webkit-transition', '.5s')
+                    .css('-moz-transition', '.5s')
+                    .css('-ms-transition', '.5s')
+                    .css('transition', '.5s')
+                    .css('opacity', 1);
+            }, 500);
+        });
+
+    }
+
+
+    /********* masonry experience *********/
+
+    if ($('.home-experience').size() > 0) {
+        $('.image').imagesLoaded(function() {
+            $('.grid').masonry({
+                itemSelector: '.grid-item'
+            });
+        });
+    }
+
+
+    /********* carousel event landing collection *********/
+
+    if ($('.page-landing .box-properties .box-images').size() > 0) {
+        $('#carousel-offers').on('slide.bs.carousel', function(e) {
+            // console.log(e);
+            $('.box-images .image').removeClass('active');
+            $('.page-landing .box-properties .box-images .image:nth-child(' + ($(e.relatedTarget).index() + 1) + ')').addClass('active');
+        });
+    }
+
+
+    /********* height page iframe *********/
+
+    if ($('.page-iframe').size() > 0) {
+        $('.page-iframe iframe').css('height', height);
+        $(window).resize(function() {
+            height = $(window).height();
+            $('.page-iframe iframe').css('height', height);
+        });
+    }
+
+    /****** read more single property description ******/
+
+    $('.box-property .excerpt .read-more').on('click', function() {
+        $(this).parents('.excerpt').hide();
+        $(this).parents('.excerpt').next().fadeIn();
+    });
+    $('.box-property .full-content .read-less').on('click', function() {
+        $(this).parents('.full-content').hide();
+        $(this).parents('.full-content').prev().fadeIn();
+    });
+
+    // FIX HOVER NAVEGADORES MOVILES
+    var width = $(window).width();
+
+    function is_touch_device() {
+        return (('ontouchstart' in window) ||
+            (navigator.MaxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
+    }
+
+    if ($('.link-content').size() > 0) {
+        if (is_touch_device()) {
+            $('.link-content').on('click', function() {
+                $(this).trigger('hover');
+            });
+        }
+    }
+
+
+    /********* alto slider carousel vp thermas & alto slider carousel ofertas landing collection *********/
+
+    if ($('.thermas-actividades, .page-template-templates-collection').size() > 0) {
+
+
+        if (width < 992) {
+            $('.carousel-inner').each(function() {
+
+                var carousel = $(this);
+                var altocontent = 0;
+                var contenido = $(this).find('.content');
+
+                $(contenido).each(function() {
+                    if ($(this).actual('innerHeight') > altocontent) {
+                        altocontent = $(this).actual('innerHeight');
+                    }
+                }).promise().done(function() {
+                    $(carousel).find('.content').css('height', altocontent);
+                });
+            });
+
+            $(window).resize(function() {
+                $('.carousel-inner').each(function() {
+
+                    var carousel = $(this);
+                    var altocontent = 0;
+                    var contenido = $(this).find('.content');
+
+                    $(contenido).each(function() {
+                        if ($(this).actual('innerHeight') > altocontent) {
+                            altocontent = $(this).actual('innerHeight');
+                        }
+                    }).promise().done(function() {
+                        $(carousel).find('.content').css('height', altocontent);
+                    });
+                });
+            });
+        }
+
+    }
+
+    // BUSCADOR ELEMENTOS VACIOS EN BG
+
+    //    if ($('.search-bg').size() > 0) {
+    //        $('.search-bg').each(function(){
+    //            var fondo = this.style.backgroundImage;
+    //
+    //            if(fondo == 'url("")') {
+    //                this.style.backgroundImage = "url('" + TEMPLATE.uri+ "/images/default-img.jpg')";
+    //            }
+    //        })
+    //    }
+
+    if ($('.search-bg').size() > 0) {
+        $('.search-bg').each(function() {
+            var fondo = this.style.backgroundImage;
+
+            if ((fondo.indexOf('jpg') != '-1') || (fondo.indexOf('png') != '-1')) {
+
+            } else {
+                this.style.backgroundImage = "url('" + TEMPLATE.uri + "/images/default-img.jpg')";
+            }
+
+        })
+    }
+
+    // BUSCADOR ELEMENTOS VACIOS EN IMG
+
+    if ($('.search-img').size() > 0) {
+        $('.search-img').each(function() {
+            var fondo = $(this).attr('src');
+
+            if (fondo == '') {
+                $(this).attr('src', TEMPLATE.uri + "/images/default-exp.jpg");
+            }
+        })
+    }
+
+    /********* Cerrar menu mobile en elementos con ancla *********/
+
+    if (width < 1200) {
+        $('.dropdown .scroll').on('click', function() {
+            $(".navbar-header .menu-toggle").trigger('click');
+        })
+    }
+    
+
+});
+
+
+/********* google maps *********/
+
+function googleMaps(element, lat, long) {
+
+    var wp_lat = parseFloat(lat);
+    var wp_long = parseFloat(long);
+
+    var map;
+    var Lat = new google.maps.LatLng(wp_lat, wp_long);
+    var LatMarker = new google.maps.LatLng(wp_lat, wp_long);
+    var draggable;
+    var width = $(window).width();
+
+    if (width > 767) {
+        draggable = true;
+    } else {
+        draggable = true;
+    }
+
+    var MY_MAPTYPE_ID = 'custom_style';
+
+    function initialize() {
+
+        var featureOpts = JSON.parse(TEMPLATE.map_style);
+
+        var mapOptions = {
+            zoom: 13,
+            center: Lat,
+            scrollwheel: false,
+            draggable: draggable,
+            mapTypeControlOptions: {
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+            },
+            mapTypeId: MY_MAPTYPE_ID
+        };
+
+        map = new google.maps.Map(document.getElementById(element), mapOptions);
+
+        var styledMapOptions = {
+            name: 'Villa Padierna'
+        };
+
+        var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+        map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+
+        var marker = new google.maps.Marker({
+            position: LatMarker,
+            map: map,
+            icon: TEMPLATE.uri + '/images/marker.svg'
+        });
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+}
+
+function googleMapsAdress(element, address) {
+
+    var map;
+    var draggable;
+    var width = $(window).width();
+
+    if (width > 767) {
+        draggable = true;
+    } else {
+        draggable = false;
+    }
+
+    var MY_MAPTYPE_ID = 'custom_style';
+
+    function initialize() {
+
+        var featureOpts = JSON.parse(TEMPLATE.map_style);
+
+        var mapOptions = {
+            zoom: 13,
+            scrollwheel: false,
+            draggable: draggable,
+            mapTypeControlOptions: {
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+            },
+            mapTypeId: MY_MAPTYPE_ID
+        };
+
+        map = new google.maps.Map(document.getElementById(element), mapOptions);
+
+        var styledMapOptions = {
+            name: 'Villa Padierna'
+        };
+
+        var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+        map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'address': address }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    icon: TEMPLATE.uri + '/images/marker.svg'
+                });
+            }
+        });
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+}
+
+function googleMapsMarkers(element, coordinates) {
+
+    var bounds = new google.maps.LatLngBounds();
+
+    for (var i = 0; i < coordinates.length; i++) {
+
+        var latitude = coordinates[i]['lat'] + 0.006;
+        var longitude = coordinates[i]['lng']
+        myLatLng = new google.maps.LatLng({ lat: latitude, lng: longitude });
+        bounds.extend(myLatLng);
+
+    }
+
+    var draggable;
+    var width = $(window).width();
+
+    if (width > 767) {
+        draggable = true;
+    } else {
+        draggable = false;
+    }
+
+    var mapOptions = {
+        zoom: 12,
+        scrollwheel: false,
+        draggable: draggable,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    var map = new google.maps.Map(document.getElementById(element), mapOptions);
+    var featureOpts = JSON.parse(TEMPLATE.map_style);
+
+    map.setOptions({ styles: featureOpts });
+    map.fitBounds(bounds);
+
+
+    for (var i = 0; i < coordinates.length; i++) {
+
+        var latitude = coordinates[i]['lat'];
+        var longitude = coordinates[i]['lng'];
+
+        myLatLng = new google.maps.LatLng({ lat: latitude, lng: longitude });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            icon: TEMPLATE.uri + '/images/marker.svg'
+        });
+
+        if ($('.collection-contact').size() > 0) {
+
+            var contentString = '<a href="#contact-' + (i + 1) + '" class="marker-scroll"></a>';
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            infowindow.open(map, marker);
+            google.maps.event.addListener(infowindow, 'domready', function() {
+                $('.gm-style-iw').children().css('overflow', 'visible');
+                $('.gm-style-iw').next('div').css('display', 'none');
+                $('.gm-style-iw').prev().children('div').css({ 'display': 'none' });
+                $('.gm-style-iw').css({
+                    'top': '75px',
+                    'left': '26px'
+                });
+                $('.gm-style-iw .marker-scroll').css({
+                    'display': 'block',
+                    'width': '20px',
+                    'height': '30px'
+                });
+            });
+
+        }
+    }
+
+    zoomChangeBoundsListener = google.maps.event.addListenerOnce(map, 'bounds_changed', function(event) {
+        if (this.getZoom()) {
+            this.setZoom(12);
+        }
+    });
+
+    if ($('.collection-contact .box-tratamiento').size() > 0) {
+
+        google.maps.event.addListener(infowindow, 'domready', function() {
+            $(".marker-scroll").on('click', function(e) {
+                e.preventDefault();
+                var id = $(this).attr('href');
+                $('html, body').stop().animate({
+                    scrollTop: $(id).offset().top - 60
+                }, 1000);
+            });
+        });
+
+    }
+
+}
+
+function googleMapsMarkersTitle(element, coordinates) {
+
+    var bounds = new google.maps.LatLngBounds();
+
+    for (var i = 0; i < coordinates.length; i++) {
+
+        // var latitude = coordinates[i]['lat'] + 0.006;
+        var latitude = coordinates[i]['lat'];
+        var longitude = coordinates[i]['lng'];
+        myLatLng = new google.maps.LatLng({ lat: latitude, lng: longitude });
+        bounds.extend(myLatLng);
+
+    }
+
+    var draggable;
+    var width = $(window).width();
+
+    if (width > 767) {
+        draggable = true;
+    } else {
+        draggable = false;
+    }
+
+    var mapOptions = {
+        zoom: 12,
+        scrollwheel: false,
+        draggable: draggable,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    var map = new google.maps.Map(document.getElementById(element), mapOptions);
+    var featureOpts = JSON.parse(TEMPLATE.map_style);
+
+    map.setOptions({ styles: featureOpts });
+    map.fitBounds(bounds);
+
+
+    for (var i = 0; i < coordinates.length; i++) {
+
+        var latitude = coordinates[i]['lat'];
+        var longitude = coordinates[i]['lng'];
+
+        myLatLng = new google.maps.LatLng({ lat: latitude, lng: longitude });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            icon: TEMPLATE.uri + '/images/marker.svg'
+        });
+
+        if ($('.collection-contact').size() > 0) {
+
+            var contentString =
+                '<div class="box-caption-title title-' + (i + 1) + '">' +
+                '<div class="box-title">' +
+                coordinates[i]['titulo'] +
+                '</div>' +
+                '</div>';
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            infowindow.open(map, marker);
+            google.maps.event.addListener(infowindow, 'domready', function() {
+                $('.gm-style-iw').children().css({
+
+                });
+                $('.gm-style-iw').next('div').css('display', 'none');
+                $('.gm-style-iw').prev().children('div').css({ 'display': 'none' });
+                $('.gm-style-iw').css({
+                    'top': '85px',
+                    'left': '25px'
+                });
+            });
+
+        }
+    }
+
+    zoomChangeBoundsListener = google.maps.event.addListenerOnce(map, 'bounds_changed', function(event) {
+        if (this.getZoom()) {
+            this.setZoom(12);
+        }
+    });
+
+}
+
+function getUrlVars() {
+    var vars = [],
+        hash, hashes = null;
+    if (window.location.href.indexOf("?") && window.location.href.indexOf("&")) {
+        hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    } else if (window.location.href.indexOf("?")) {
+        hashes = window.location.href.slice(window.location.href.indexOf('?') + 1);
+    }
+    if (hashes != null) {
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars[hash[0]] = hash[1];
+        }
+    }
+    return vars;
+}

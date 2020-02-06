@@ -1,0 +1,97 @@
+/******** DETECT BROWSER ********/
+
+function detectBrowser(version) {
+    
+    var browserName;
+    var browserVersion;
+    
+	//firefox
+	if (/Firefox[\/\s](\d+\.\d+)/.test(navigator.userAgent)) {
+		browserName = "firefox";
+		var ffversion=new Number(RegExp.$1);
+		browserVersion = Math.floor(ffversion);
+	}
+    
+	//internet explorer
+	if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) { 
+		browserName = "internet explorer";
+		var ieversion=new Number(RegExp.$1);
+		browserVersion = Math.floor(ieversion);
+	}
+	
+	//opera
+	if (/Opera[\/\s](\d+\.\d+)/.test(navigator.userAgent)) { 
+		browserName = "opera";
+		var oprversion=new Number(RegExp.$1);
+		browserVersion = Math.floor(oprversion);
+	}
+	
+	//chrome
+	if((navigator.userAgent.toLowerCase().indexOf('chrome') > -1) && (navigator.userAgent.toLowerCase().indexOf('safari') !=-1)) {
+		browserName = "chrome";
+		browserVersion = "";
+	}
+	
+	//safari
+	if((navigator.userAgent.toLowerCase().indexOf('chrome') == -1) && (navigator.userAgent.toLowerCase().indexOf('safari') !=-1)) {
+		browserName = "safari";
+		browserVersion = "";
+	}
+    
+    if (version) {
+        var object = { browser: browserName, version: browserVersion }
+        return object;
+    } else {
+        return browserName;
+    }
+}
+
+
+/******** DETECT DEVICE ********/
+
+function detectDevice() {
+    
+    var deviceName;
+    
+	if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i))) {
+		deviceName = "iosdevice";
+	} else if (navigator.userAgent.match(/Android/i)) {
+		deviceName = "android";
+	} else if (navigator.userAgent.match(/BlackBerry/i))  {
+		deviceName = "blackberry";
+	} else if (navigator.userAgent.match(/IEMobile/i))  {
+		deviceName = "iemobile";
+	} else if (navigator.userAgent.match(/Silk/i))  {
+		deviceName = "kindle";
+	} else {
+		deviceName = "computer";
+	}
+    
+    return deviceName;
+}
+
+
+/******** DETECT TOUCH DEVICE ********/
+
+function is_touch_device() {
+    
+    return (('ontouchstart' in window)
+         || (navigator.MaxTouchPoints > 0)
+         || (navigator.msMaxTouchPoints > 0));
+    
+}
+
+
+/******** DETECT IF TRANSITIONS AND ANIMATIONS CSS WORK ********/
+
+function is_device_transitions() {
+    
+    var b = document.body.style;
+    
+    return ((b.MozTransition == ''
+        || b.WebkitTransition == ''
+        || b.OTransition == ''
+        || b.transition == ''));
+    
+}
+

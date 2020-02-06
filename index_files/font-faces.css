@@ -1,0 +1,167 @@
+/* 
+   _  ___         
+| |/ (_) |__  ___
+| ' <| | '_ \/ _ \
+|_|\_\_|_.__/\___/
+
+KIBO STUDIOS // ADVERTISING ® 2016
+This file was originally created by Kibo.
+No public difusion allowed. Code rights reserved.
+Contact us info@kibostudios.com
+www.kibostudios.com
+
+ExtraLight: 100
+Light:      200
+SemiLight:  300
+Book:       400
+Regular:    500
+Medium:     600
+SemiBold:   700
+Bold:       800
+ExtraBold:  900
+
+*/
+
+/************************ AVENIR ************************/
+
+/*
+@font-face {
+    font-family: 'avenir';
+    font-weight: 500;
+    src: url('../fonts/avenir-next/AvenirNext-Regular.eot');
+    src: url('../fonts/avenir-next/AvenirNext-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avenir-next/AvenirNext-Regular.woff') format('woff'),
+         url('../fonts/avenir-next/AvenirNext-Regular.ttf')  format('truetype');
+}
+*/
+
+@font-face {
+    font-family: 'avenir';
+    font-weight: 500;
+    src: url('../fonts/avenir-next/book/Avenir-Book.eot');
+    src: url('../fonts/avenir-next/book/Avenir-Book.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avenir-next/book/Avenir-Book.woff') format('woff'),
+         url('../fonts/avenir-next/book/Avenir-Book.ttf')  format('truetype');
+}
+
+/*@font-face {
+    font-family: 'avenir';
+    font-weight: 600;
+    src: url('../fonts/avenir-next/AvenirNext-Medium.eot');
+    src: url('../fonts/avenir-next/AvenirNext-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avenir-next/AvenirNext-Medium.woff') format('woff'),
+         url('../fonts/avenir-next/AvenirNext-Medium.ttf')  format('truetype');
+}*/
+
+@font-face {
+    font-family: 'avenir';
+    font-weight: 600;
+    src: url('../fonts/avenir-next/medium/AvenirLTStd-Medium.eot');
+    src: url('../fonts/avenir-next/medium/AvenirLTStd-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avenir-next/medium/AvenirLTStd-Medium.woff') format('woff'),
+         url('../fonts/avenir-next/medium/AvenirLTStd-Medium.ttf')  format('truetype');
+}
+
+/*
+@font-face {
+    font-family: 'avenir';
+    font-weight: 700;
+    src: url('../fonts/avenir-next/AvenirNext-DemiBold.eot');
+    src: url('../fonts/avenir-next/AvenirNext-DemiBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avenir-next/AvenirNext-DemiBold.woff') format('woff'),
+         url('../fonts/avenir-next/AvenirNext-DemiBold.ttf')  format('truetype');
+}
+*/
+
+@font-face {
+    font-family: 'avenir';
+    font-weight: 700;
+    src: url('../fonts/avenir-next/demi/AvenirLTStd-Heavy.eot');
+    src: url('../fonts/avenir-next/demi/AvenirLTStd-Heavy.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avenir-next/demi/AvenirLTStd-Heavy.woff') format('woff'),
+         url('../fonts/avenir-next/demi/AvenirLTStd-Heavy.ttf')  format('truetype');
+}
+
+/*
+@font-face {
+    font-family: 'avenir';
+    font-weight: 800;
+    src: url('../fonts/avenir-next/AvenirNext-Bold.eot');
+    src: url('../fonts/avenir-next/AvenirNext-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avenir-next/AvenirNext-Bold.woff') format('woff'),
+         url('../fonts/avenir-next/AvenirNext-Bold.ttf')  format('truetype');
+}
+*/
+
+@font-face {
+    font-family: 'avenir';
+    font-weight: 800;
+    src: url('../fonts/avenir-next/bold/AvenirLTStd-Black.eot');
+    src: url('../fonts/avenir-next/bold/AvenirLTStd-Black.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avenir-next/bold/AvenirLTStd-Black.woff') format('woff'),
+         url('../fonts/avenir-next/bold/AvenirLTStd-Black.ttf')  format('truetype');
+}
+
+
+/************************ TRAJAN ************************/
+
+@font-face {
+    font-family: 'trajan';
+    font-weight: 500;
+    src: url('../fonts/trajan-pro/TrajanPro-Regular.eot');
+    src: url('../fonts/trajan-pro/TrajanPro-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/trajan-pro/TrajanPro-Regular.woff') format('woff'),
+         url('../fonts/trajan-pro/TrajanPro-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'trajan';
+    font-weight: 800;
+    src: url('../fonts/trajan-pro/TrajanPro-Bold.eot');
+    src: url('../fonts/trajan-pro/TrajanPro-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/trajan-pro/TrajanPro-Bold.woff') format('woff'),
+         url('../fonts/trajan-pro/TrajanPro-Bold.ttf')  format('truetype');
+}
+
+
+/************************ PALATINO ************************/
+
+@font-face {
+    font-family: 'palatino';
+    font-weight: 500;
+    src: url('../fonts/palatino/palatino-regular.eot');
+    src: url('../fonts/palatino/palatino-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/palatino/palatino-regular.woff') format('woff'),
+         url('../fonts/palatino/palatino-regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'palatino';
+    font-weight: 800;
+    src: url('../fonts/palatino/palatino-bold.eot');
+    src: url('../fonts/palatino/palatino-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/palatino/palatino-bold.woff') format('woff'),
+         url('../fonts/palatino/palatino-bold.ttf')  format('truetype');
+}
+
+
+/************************ DIDOT ************************/
+
+@font-face {
+    font-family: 'didot';
+    font-weight: 500;
+    src: url('../fonts/didot/didot-regular.eot');
+    src: url('../fonts/didot/didot-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/didot/didot-regular.woff') format('woff'),
+         url('../fonts/didot/didot-regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'didot';
+    font-weight: 800;
+    src: url('../fonts/didot/didot-bold.eot');
+    src: url('../fonts/didot/didot-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/didot/didot-bold.woff') format('woff'),
+         url('../fonts/didot/didot-bold.ttf')  format('truetype');
+}
+
